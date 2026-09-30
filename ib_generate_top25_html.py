@@ -9,7 +9,7 @@ def generate_top25_report(csv_file, output_html):
     filtered_df = df[
         (df['Trend'] == 'Bullish') & 
         (df['Action'] != 'S') & 
-        (df['Sharpe Ratio'] >= 1.2) & 
+        (df['Sharpe Ratio'] >= 0.8) & 
         (df['Rank longterm'] <= 100)
     ]
     
