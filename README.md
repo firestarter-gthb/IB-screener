@@ -17,31 +17,24 @@ Een robuuste Python-screener voor het analyseren en rangschikken van aandelen op
 * `ib_generate_html.py`: Neemt de finale CSV in en bouwt hier een lokaal, visueel HTML-dashboard van.
 * `analyze.py`: Bevat extra analyse- en debug-scripts.
 
-## Installatie & Gebruik
+## 📂 Hoe te Gebruiken
 
-### 1. Requirements
-Zorg dat je Python geïnstalleerd hebt. Installeer de afhankelijkheden:
-```bash
-pip install pandas yfinance numpy requests
-```
+1. **Screener updaten**
+Draai simpelweg het `.bat` bestand om de volledige analyse uit te voeren. Het script doet het ophaalwerk en genereert de rapporten:
+- `run_ib_screener.bat`
 
-### 2. Draai de Screener
-Zodra je `data.csv` beschikbaar is, kun je het proces starten:
+*(Let op: Het ophalen van de historische data voor alle aandelen kan 1 à 2 minuten duren. Na afloop opent de software automatisch het dashboard in je browser.)*
 
-Stap 1: Tickers extraheren en formatteren
-```bash
-python extract_tickers.py
-```
+2. **Nieuwe lijst verwerken**
+Als je handmatig `data.csv` vernieuwt met een nieuwe download uit je Google Spreadsheet, voer dan één keer `python extract_tickers.py` uit om de lijst te structureren, **voordat** je de screener draait.
 
-Stap 2: Momentum Screener draaien (Dit kan een paar minuten duren vanwege de data download)
-```bash
-python ib_momentum_screener.py
-```
+## ⚙️ Installatie / Vereisten
 
-Stap 3: Het interactieve HTML rapport genereren
-```bash
-python ib_generate_html.py
-```
+Om de screener te kunnen draaien heb je het volgende nodig:
 
-### 3. Bekijk de resultaten
-Open het pas gegenereerde bestand `ib_screener_dashboard.html` in je webbrowser.
+1. **Python 3.8 of nieuwer**: [Download Python](https://www.python.org/downloads/).
+2. **Een webbrowser**: (Google Chrome, Edge, Safari of Firefox) om het dashboard te bekijken.
+3. **Python Packages**: Installeer de vereiste pakketten in één keer door het volgende commando uit te voeren in de projectmap (of in je terminal):
+   ```bash
+   pip install -r requirements.txt
+   ```
