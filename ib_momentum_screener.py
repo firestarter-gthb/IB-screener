@@ -207,7 +207,8 @@ def run_screener():
                 curr['Name'] = row['Name']
                 curr['Ticker'] = row['Ticker']
                 curr['yf_ticker'] = t
-                curr['GICS sector'] = row['GICS sector']
+                curr['GICS sector'] = row.get('GICS sector', 'Unknown')
+                curr['GICS industry'] = row.get('GICS industry', 'Unknown')
                 results_current.append(curr)
                 
             # Past metrics (22 trading days ago ~ 1 month)
@@ -216,7 +217,8 @@ def run_screener():
                 past['Name'] = row['Name']
                 past['Ticker'] = row['Ticker']
                 past['yf_ticker'] = t
-                past['GICS sector'] = row['GICS sector']
+                past['GICS sector'] = row.get('GICS sector', 'Unknown')
+                past['GICS industry'] = row.get('GICS industry', 'Unknown')
                 results_past.append(past)
             
         except Exception as e:
@@ -240,7 +242,7 @@ def run_screener():
         final_df['Rank all past'] = final_df['Rank all past'].fillna(final_df['Rank all'])
 
         output_cols = [
-            'Action', 'Rank all', 'Rank all past', 'Delta', 'Rank shortterm', 'Rank longterm', 'Trend', 'Ticker', 'Name', 'GICS sector', 
+            'Action', 'Rank all', 'Rank all past', 'Delta', 'Rank shortterm', 'Rank longterm', 'Trend', 'Ticker', 'Name', 'GICS sector', 'GICS industry',
             'Current price', 'Beta', 'Last month', 'Last 3 months', 'Last year', 'YTD Performance', '200 avg', 'Z-score 20MA', 
             'Efficiency Score', 'Sharpe Ratio', 'Trend rank', 'Sharp ratio rank', 'Rank efficiency', 
             'Rank 1M', 'Rank 3M', 'Rank 1 Jaar', 'Rank 200 MAVG', 'Total score', 'Total score incl beta', 'Sector momentum rank'

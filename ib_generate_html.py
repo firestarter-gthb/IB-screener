@@ -268,7 +268,7 @@ def generate_html_report(csv_file, output_html):
         const columns = {json.dumps(columns)};
         
         const dropdownCols = ['Action', 'Trend'];
-        const multiSelectCols = ['GICS sector'];
+        const multiSelectCols = ['GICS sector', 'GICS industry'];
         
         let currentData = [...rawData];
         let filters = {{}};
