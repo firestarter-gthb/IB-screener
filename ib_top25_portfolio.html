@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IB Top 25 Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#11088;</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --surface-color: #1e293b;
+            --surface-hover: #334155;
+            --border-color: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-color: #f59e0b;
+            --accent-hover: #fbbf24;
+            --positive: #10b981;
+            --negative: #ef4444;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .meta-info .badge {
+            background: var(--surface-hover);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        main {
+            padding: 2rem;
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .table-container {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            overflow: auto;
+            flex: 1;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
+        thead { position: sticky; top: 0; z-index: 10; background: var(--surface-color); }
+        th { padding: 0.75rem 1rem; border-bottom: 2px solid var(--border-color); vertical-align: top; }
+        
+        .col-title {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+        }
+
+        tbody tr { border-bottom: 1px solid var(--border-color); transition: background-color 0.15s; }
+        tbody tr:hover { background-color: rgba(51, 65, 85, 0.5); }
+        td { padding: 0.75rem 1rem; font-size: 0.875rem; }
+
+        /* Rijen waarbij de koers binnen ±0.5 Z-score van de 20MA zit (pullback/consolidatie zone) */
+        tbody tr.near-20ma { background-color: rgba(16, 185, 129, 0.07); }
+        tbody tr.near-20ma:hover { background-color: rgba(16, 185, 129, 0.14); }
+        tbody tr.near-20ma td { color: #6ee7b7; }
+        tbody tr.near-20ma td:first-child { font-weight: 600; }
+
+        /* Rijen waarbij koers onder de 50MA zit (verkoop/zwak) */
+        tbody tr.under-50ma { background-color: rgba(239, 68, 68, 0.07); }
+        tbody tr.under-50ma:hover { background-color: rgba(239, 68, 68, 0.14); }
+        tbody tr.under-50ma td { color: #fca5a5; }
+        tbody tr.under-50ma td:first-child { font-weight: 600; }
+
+        .trend-bullish { color: #10b981; font-weight: bold; }
+        .trend-bearish { color: #ef4444; font-weight: bold; }
+        
+        .delta-positive { color: #10b981; }
+        .delta-negative { color: #ef4444; }
+
+        .rank-top { background: rgba(16, 185, 129, 0.1); color: #34d399; font-weight: 600; }
+
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: var(--surface-hover); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+        
+        #no-results { text-align: center; padding: 3rem; color: var(--text-secondary); display: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IB Top 25 Zes Maanden Portfolio ⭐</h1>
+        <div class="meta-info">
+            <span>Laatste update: <strong>30-09-2026 17:19:08</strong></span>
+            <span class="badge" id="row-count">25 Aandelen</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="table-container">
+            <table id="data-table">
+                <thead>
+                    <tr id="table-headers"></tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+            <div id="no-results">Geen aandelen gevonden die aan de strenge criteria voldoen.</div>
+        </div>
+    </main>
+
+    <script>
+        const rawData = [{"Action": "N", "Rank all": 1, "Rank all past": 1, "Delta": 0, "Rank shortterm": 1, "Rank longterm": 5, "Trend": "Bullish", "Ticker": "NASDAQ:MRNA", "Name": "Moderna Inc", "GICS sector": "Healthcare", "GICS industry": "Biotechnology", "Current price": 203.4600067138672, "Beta": 1.9612428838544451, "Last month": 0.4744546605873312, "Last 3 months": 1.905326435247869, "Last year": 6.876887623493071, "YTD Performance": 5.593000735250126, "200 avg": 2.0839784789840907, "Z-score 20MA": 1.813148608234069, "Efficiency Score": 0.2685017383250424, "Sharpe Ratio": 1.6221286308505227, "Trend rank": 1, "Sharp ratio rank": 29.0, "Rank efficiency": 1.0, "Rank 1M": 1.0, "Rank 3M": 1.0, "Rank 1 Jaar": 2.0, "Rank 200 MAVG": 1.0, "Total score": 6.031666666666666, "Total score incl beta": 6.611456332778205, "Sector momentum rank": 2}, {"Action": "N", "Rank all": 2, "Rank all past": 4, "Delta": 2, "Rank shortterm": 3, "Rank longterm": 16, "Trend": "Bullish", "Ticker": "NASDAQ:OKTA", "Name": "Okta Inc", "GICS sector": "Technology", "GICS industry": "Software - Infrastructure", "Current price": 204.8800048828125, "Beta": 1.2246517856561414, "Last month": 0.2325092350878905, "Last 3 months": 0.5015024511911641, "Last year": 1.234242221386899, "YTD Performance": 1.449545748181451, "200 avg": 0.8572333865168107, "Z-score 20MA": 1.3853217618582816, "Efficiency Score": 0.1590903090243135, "Sharpe Ratio": 1.5329170009410655, "Trend rank": 1, "Sharp ratio rank": 34.0, "Rank efficiency": 13.0, "Rank 1M": 8.0, "Rank 3M": 8.0, "Rank 1 Jaar": 19.0, "Rank 200 MAVG": 3.0, "Total score": 16.89, "Total score incl beta": 17.269436865973226, "Sector momentum rank": 3}, {"Action": "B", "Rank all": 3, "Rank all past": 5, "Delta": 2, "Rank shortterm": 7, "Rank longterm": 8, "Trend": "Bullish", "Ticker": "VLO", "Name": "Valero Energy Corp", "GICS sector": "Energy", "GICS industry": "Oil & Gas Refining & Marketing", "Current price": 387.7200012207031, "Beta": -0.275299183653707, "Last month": 0.1003519620250315, "Last 3 months": 0.4944646924614797, "Last year": 1.3255047180724726, "YTD Performance": 1.3801304361062128, "200 avg": 0.518250766510371, "Z-score 20MA": 0.1253581387467553, "Efficiency Score": 0.206435693635192, "Sharpe Ratio": 2.493159960487056, "Trend rank": 1, "Sharp ratio rank": 3.0, "Rank efficiency": 3.0, "Rank 1M": 32.0, "Rank 3M": 10.0, "Rank 1 Jaar": 18.0, "Rank 200 MAVG": 14.0, "Total score": 17.038333333333334, "Total score incl beta": 14.86543607425136, "Sector momentum rank": 1}, {"Action": "N", "Rank all": 4, "Rank all past": 9, "Delta": 5, "Rank shortterm": 6, "Rank longterm": 7, "Trend": "Bullish", "Ticker": "TWLO", "Name": "Twilio Inc", "GICS sector": "Technology", "GICS industry": "Software - Infrastructure", "Current price": 290.7799987792969, "Beta": 1.3671412360407462, "Last month": 0.2228951142740716, "Last 3 months": 0.4092957698773771, "Last year": 1.9051854272994675, "YTD Performance": 1.1016189469251985, "200 avg": 0.6742867796367142, "Z-score 20MA": 1.4802690918930492, "Efficiency Score": 0.1801494663986027, "Sharpe Ratio": 2.0012266504890164, "Trend rank": 1, "Sharp ratio rank": 13.0, "Rank efficiency": 6.0, "Rank 1M": 10.0, "Rank 3M": 15.0, "Rank 1 Jaar": 13.0, "Rank 200 MAVG": 6.0, "Total score": 17.770000000000003, "Total score incl beta": 18.42240997644441, "Sector momentum rank": 3}, {"Action": "B", "Rank all": 5, "Rank all past": 3, "Delta": -2, "Rank shortterm": 8, "Rank longterm": 12, "Trend": "Bullish", "Ticker": "MPC", "Name": "Marathon Petroleum Corp", "GICS sector": "Energy", "GICS industry": "Oil & Gas Refining & Marketing", "Current price": 392.0299987792969, "Beta": -0.1404813383722404, "Last month": 0.0629016431734343, "Last 3 months": 0.5375422917102413, "Last year": 1.067957121008689, "YTD Performance": 1.4014851923818226, "200 avg": 0.5245840709310479, "Z-score 20MA": -0.449601019221861, "Efficiency Score": 0.198547831709984, "Sharpe Ratio": 2.27204992411703, "Trend rank": 1, "Sharp ratio rank": 4.0, "Rank efficiency": 4.0, "Rank 1M": 50.0, "Rank 3M": 6.0, "Rank 1 Jaar": 23.0, "Rank 200 MAVG": 13.0, "Total score": 19.18333333333333, "Total score incl beta": 16.99550996588925, "Sector momentum rank": 1}, {"Action": "B", "Rank all": 6, "Rank all past": 2, "Delta": -4, "Rank shortterm": 19, "Rank longterm": 3, "Trend": "Bullish", "Ticker": "DELL", "Name": "Dell Technologies Inc", "GICS sector": "Technology", "GICS industry": "Computer Hardware", "Current price": 539.5900268554688, "Beta": 2.2396374638846583, "Last month": 0.1826890198254562, "Last 3 months": 0.25268086443146, "Last year": 2.854595524176508, "YTD Performance": 3.260765421680272, "200 avg": 0.8840500775575062, "Z-score 20MA": 0.0529495464088823, "Efficiency Score": 0.1723410674686529, "Sharpe Ratio": 2.15848742273238, "Trend rank": 1, "Sharp ratio rank": 10.0, "Rank efficiency": 8.0, "Rank 1M": 14.0, "Rank 3M": 34.0, "Rank 1 Jaar": 6.0, "Rank 200 MAVG": 2.0, "Total score": 20.505000000000003, "Total score incl beta": 23.04687661969549, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 7, "Rank all past": 6, "Delta": -1, "Rank shortterm": 13, "Rank longterm": 10, "Trend": "Bullish", "Ticker": "HPE", "Name": "Hewlett Packard Enterprise Co", "GICS sector": "Technology", "GICS industry": "Communication Equipment", "Current price": 61.4900016784668, "Beta": 2.049778870924354, "Last month": 0.1784655036833913, "Last 3 months": 0.3665602106433812, "Last year": 1.5488101733344326, "YTD Performance": 1.5744538808300297, "200 avg": 0.7038965660034053, "Z-score 20MA": 0.7699632273788403, "Efficiency Score": 0.1602114123225378, "Sharpe Ratio": 1.925523999667372, "Trend rank": 1, "Sharp ratio rank": 16.0, "Rank efficiency": 12.0, "Rank 1M": 15.0, "Rank 3M": 24.0, "Rank 1 Jaar": 15.0, "Rank 200 MAVG": 5.0, "Total score": 21.245, "Total score incl beta": 23.475255211278792, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 8, "Rank all past": 10, "Delta": 2, "Rank shortterm": 9, "Rank longterm": 13, "Trend": "Bullish", "Ticker": "NASDAQ:CRWD", "Name": "Crowdstrike Holdings Inc", "GICS sector": "Technology", "GICS industry": "Software - Infrastructure", "Current price": 262.739990234375, "Beta": 1.4940798052416353, "Last month": 0.2030219669278314, "Last 3 months": 0.3771522142259242, "Last year": 1.1431541875135198, "YTD Performance": 1.3170333613695675, "200 avg": 0.735121630179415, "Z-score 20MA": 1.3422719120187592, "Efficiency Score": 0.1492241597724699, "Sharpe Ratio": 1.666021106688071, "Trend rank": 1, "Sharp ratio rank": 22.0, "Rank efficiency": 20.0, "Rank 1M": 13.0, "Rank 3M": 20.0, "Rank 1 Jaar": 20.0, "Rank 200 MAVG": 4.0, "Total score": 21.29, "Total score incl beta": 22.341895905359443, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 9, "Rank all past": 11, "Delta": 2, "Rank shortterm": 16, "Rank longterm": 15, "Trend": "Bullish", "Ticker": "PSX", "Name": "Phillips 66", "GICS sector": "Energy", "GICS industry": "Oil & Gas Refining & Marketing", "Current price": 252.25, "Beta": -0.2432276277230293, "Last month": 0.0337691310957068, "Last 3 months": 0.5000817576905312, "Last year": 0.909422789477593, "YTD Performance": 0.9723506284777812, "200 avg": 0.396812027269066, "Z-score 20MA": -1.121146298205325, "Efficiency Score": 0.1866063964706825, "Sharpe Ratio": 2.24039899104936, "Trend rank": 1, "Sharp ratio rank": 5.0, "Rank efficiency": 5.0, "Rank 1M": 63.0, "Rank 3M": 9.0, "Rank 1 Jaar": 24.0, "Rank 200 MAVG": 23.0, "Total score": 23.703333333333333, "Total score incl beta": 20.756469446420517, "Sector momentum rank": 1}, {"Action": "N", "Rank all": 10, "Rank all past": 7, "Delta": -3, "Rank shortterm": 14, "Rank longterm": 21, "Trend": "Bullish", "Ticker": "FSLY", "Name": "Fastly Inc", "GICS sector": "Technology", "GICS industry": "Software - Application", "Current price": 25.479999542236328, "Beta": 1.1499104349524365, "Last month": 0.1059027139649373, "Last 3 months": 0.38779949320211, "Last year": 1.9801168390437605, "YTD Performance": 1.50049073517998, "200 avg": 0.2915701758023734, "Z-score 20MA": 0.6188177250068523, "Efficiency Score": 0.076965042317333, "Sharpe Ratio": 1.4521934401223433, "Trend rank": 1, "Sharp ratio rank": 42.0, "Rank efficiency": 100.0, "Rank 1M": 30.0, "Rank 3M": 19.0, "Rank 1 Jaar": 12.0, "Rank 200 MAVG": 27.0, "Total score": 24.875, "Total score incl beta": 25.247902206944183, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 12, "Rank all past": 8, "Delta": -4, "Rank shortterm": 39, "Rank longterm": 17, "Trend": "Bullish", "Ticker": "PANW", "Name": "Palo Alto Networks Inc", "GICS sector": "Technology", "GICS industry": "Software - Infrastructure", "Current price": 388.4100036621094, "Beta": 1.1847859450272145, "Last month": 0.045264962700783, "Last 3 months": 0.1389655040031614, "Last year": 0.9075238826057894, "YTD Performance": 1.1654123556637783, "200 avg": 0.5712648931466684, "Z-score 20MA": 1.129501317387374, "Efficiency Score": 0.1342901738972877, "Sharpe Ratio": 1.5977840427879275, "Trend rank": 1, "Sharp ratio rank": 31.0, "Rank efficiency": 24.0, "Rank 1M": 57.0, "Rank 3M": 54.0, "Rank 1 Jaar": 25.0, "Rank 200 MAVG": 10.0, "Total score": 38.205, "Total score incl beta": 38.91097470297648, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 13, "Rank all past": 17, "Delta": 4, "Rank shortterm": 28, "Rank longterm": 29, "Trend": "Bullish", "Ticker": "APA", "Name": NaN, "GICS sector": "Energy", "GICS industry": "Oil & Gas E&P", "Current price": 42.18999862670898, "Beta": -0.7378539972771692, "Last month": -0.0082276041675073, "Last 3 months": 0.3044809271418978, "Last year": 0.7982480671831684, "YTD Performance": 0.7026046420908012, "200 avg": 0.2128981171481665, "Z-score 20MA": -1.5005812761632369, "Efficiency Score": 0.1006078268075782, "Sharpe Ratio": 1.5152637644027884, "Trend rank": 1, "Sharp ratio rank": 37.0, "Rank efficiency": 64.0, "Rank 1M": 94.0, "Rank 3M": 28.0, "Rank 1 Jaar": 33.0, "Rank 200 MAVG": 39.0, "Total score": 38.31333333333333, "Total score incl beta": 31.65503538509874, "Sector momentum rank": 1}, {"Action": "N", "Rank all": 14, "Rank all past": 55, "Delta": 41, "Rank shortterm": 56, "Rank longterm": 4, "Trend": "Bullish", "Ticker": "AMD", "Name": "Advanced Micro Devices Inc", "GICS sector": "Technology", "GICS industry": "Semiconductors", "Current price": 607.5700073242188, "Beta": 3.217300342600621, "Last month": 0.3049744938508303, "Last 3 months": 0.0458935728635776, "Last year": 2.7553002814562464, "YTD Performance": 1.718798961853369, "200 avg": 0.6482484428917272, "Z-score 20MA": 1.0366290306164048, "Efficiency Score": 0.1528412908807962, "Sharpe Ratio": 2.1847248665238665, "Trend rank": 1, "Sharp ratio rank": 8.0, "Rank efficiency": 17.0, "Rank 1M": 4.0, "Rank 3M": 101.0, "Rank 1 Jaar": 8.0, "Rank 200 MAVG": 7.0, "Total score": 39.845000000000006, "Total score incl beta": 48.67983321509218, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 15, "Rank all past": 35, "Delta": 20, "Rank shortterm": 18, "Rank longterm": 40, "Trend": "Bullish", "Ticker": "NYSE:TMO", "Name": "Thermo Fisher Scientific Inc", "GICS sector": "Healthcare", "GICS industry": "Diagnostics & Research", "Current price": 679.6099853515625, "Beta": 0.5577447273544514, "Last month": 0.093141765615494, "Last 3 months": 0.3565719892097827, "Last year": 0.4061238652788281, "YTD Performance": 0.1501674833208759, "200 avg": 0.2575121940983653, "Z-score 20MA": 1.37872713194208, "Efficiency Score": 0.1094746630430525, "Sharpe Ratio": 1.2872909524500733, "Trend rank": 1, "Sharp ratio rank": 54.0, "Rank efficiency": 43.0, "Rank 1M": 34.0, "Rank 3M": 25.0, "Rank 1 Jaar": 61.0, "Rank 200 MAVG": 30.0, "Total score": 40.60166666666666, "Total score incl beta": 38.806036550513625, "Sector momentum rank": 2}, {"Action": "N", "Rank all": 16, "Rank all past": 13, "Delta": -3, "Rank shortterm": 44, "Rank longterm": 19, "Trend": "Bullish", "Ticker": "MRK", "Name": "Merck & Co Inc", "GICS sector": "Healthcare", "GICS industry": "Drug Manufacturers - General", "Current price": 149.27999877929688, "Beta": 0.1904993638245493, "Last month": 0.0122087312293344, "Last 3 months": 0.1685694075388337, "Last year": 0.8308524356420228, "YTD Performance": 0.4312937343901433, "200 avg": 0.2363612694602228, "Z-score 20MA": 0.6702229358042628, "Efficiency Score": 0.1798122436417628, "Sharpe Ratio": 2.2005025045695543, "Trend rank": 1, "Sharp ratio rank": 6.0, "Rank efficiency": 7.0, "Rank 1M": 79.0, "Rank 3M": 49.0, "Rank 1 Jaar": 30.0, "Rank 200 MAVG": 36.0, "Total score": 43.48166666666667, "Total score incl beta": 39.96182298380311, "Sector momentum rank": 2}, {"Action": "N", "Rank all": 18, "Rank all past": 49, "Delta": 31, "Rank shortterm": 64, "Rank longterm": 27, "Trend": "Bullish", "Ticker": "DDOG", "Name": "Datadog Inc", "GICS sector": "Technology", "GICS industry": "Software - Application", "Current price": 268.5599975585937, "Beta": 1.1736373447845692, "Last month": 0.1332602008625356, "Last 3 months": 0.0314949019372496, "Last year": 0.8859551198704374, "YTD Performance": 1.0076249456611692, "200 avg": 0.4684597573542297, "Z-score 20MA": 1.7150863513584664, "Efficiency Score": 0.101833925837781, "Sharpe Ratio": 1.248379855137845, "Trend rank": 1, "Sharp ratio rank": 59.0, "Rank efficiency": 61.0, "Rank 1M": 22.0, "Rank 3M": 108.0, "Rank 1 Jaar": 28.0, "Rank 200 MAVG": 16.0, "Total score": 51.795, "Total score incl beta": 52.69435462731168, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 20, "Rank all past": 15, "Delta": -5, "Rank shortterm": 47, "Rank longterm": 32, "Trend": "Bullish", "Ticker": "AMGN", "Name": "Amgen Inc", "GICS sector": "Healthcare", "GICS industry": "Drug Manufacturers - General", "Current price": 423.6400146484375, "Beta": 0.5141189673171471, "Last month": -0.0203043302961373, "Last 3 months": 0.1767253487876501, "Last year": 0.5428486198888229, "YTD Performance": 0.3194618068228825, "200 avg": 0.1783192207433552, "Z-score 20MA": 0.8330652143687478, "Efficiency Score": 0.1314077381166973, "Sharpe Ratio": 1.631376519632017, "Trend rank": 1, "Sharp ratio rank": 25.0, "Rank efficiency": 25.0, "Rank 1M": 105.0, "Rank 3M": 48.0, "Rank 1 Jaar": 48.0, "Rank 200 MAVG": 49.0, "Total score": 54.20166666666667, "Total score incl beta": 51.56811048935349, "Sector momentum rank": 2}, {"Action": "N", "Rank all": 21, "Rank all past": 59, "Delta": 38, "Rank shortterm": 27, "Rank longterm": 53, "Trend": "Bullish", "Ticker": "NASDAQ:GILD", "Name": "Gilead Sciences, Inc", "GICS sector": "Healthcare", "GICS industry": "Drug Manufacturers - General", "Current price": 151.27999877929688, "Beta": 0.3388514532843897, "Last month": 0.0442891596874721, "Last 3 months": 0.2041478868111776, "Last year": 0.3965646823995175, "YTD Performance": 0.2664599435474584, "200 avg": 0.1223060539315386, "Z-score 20MA": 0.872484353822357, "Efficiency Score": 0.1010258005132725, "Sharpe Ratio": 1.4051540959913935, "Trend rank": 1, "Sharp ratio rank": 49.0, "Rank efficiency": 63.0, "Rank 1M": 58.0, "Rank 3M": 41.0, "Rank 1 Jaar": 64.0, "Rank 200 MAVG": 69.0, "Total score": 56.34666666666666, "Total score incl beta": 52.62131498877311, "Sector momentum rank": 2}, {"Action": "N", "Rank all": 22, "Rank all past": 74, "Delta": 52, "Rank shortterm": 36, "Rank longterm": 46, "Trend": "Bullish", "Ticker": "NYSE:XOM", "Name": "Exxonmobil Holdings Corp", "GICS sector": "Energy", "GICS industry": "Oil & Gas Integrated", "Current price": 161.35000610351562, "Beta": -0.5645614158251733, "Last month": 0.0296088264364666, "Last 3 months": 0.1877909385935559, "Last year": 0.4725175593902737, "YTD Performance": 0.3419223430709595, "200 avg": 0.0980591512023771, "Z-score 20MA": -0.541912591744125, "Efficiency Score": 0.1142768308788607, "Sharpe Ratio": 1.629844520648722, "Trend rank": 1, "Sharp ratio rank": 26.0, "Rank efficiency": 35.0, "Rank 1M": 68.0, "Rank 3M": 45.0, "Rank 1 Jaar": 55.0, "Rank 200 MAVG": 85.0, "Total score": 56.47333333333333, "Total score incl beta": 47.63773349769664, "Sector momentum rank": 1}, {"Action": "N", "Rank all": 23, "Rank all past": 63, "Delta": 40, "Rank shortterm": 30, "Rank longterm": 55, "Trend": "Bullish", "Ticker": "CVX", "Name": NaN, "GICS sector": "Energy", "GICS industry": "Oil & Gas Integrated", "Current price": 204.3800048828125, "Beta": -0.4943941557869639, "Last month": 0.0124839208602067, "Last 3 months": 0.2437479931308199, "Last year": 0.3679797354008094, "YTD Performance": 0.3475766957053303, "200 avg": 0.1154162251828103, "Z-score 20MA": -1.2213623147904402, "Efficiency Score": 0.1068395487326639, "Sharpe Ratio": 1.4461681157971862, "Trend rank": 1, "Sharp ratio rank": 43.0, "Rank efficiency": 48.0, "Rank 1M": 78.0, "Rank 3M": 36.0, "Rank 1 Jaar": 67.0, "Rank 200 MAVG": 74.0, "Total score": 56.58333333333333, "Total score incl beta": 48.12755306850542, "Sector momentum rank": 1}, {"Action": "N", "Rank all": 25, "Rank all past": 16, "Delta": -9, "Rank shortterm": 48, "Rank longterm": 23, "Trend": "Bullish", "Ticker": "TGT", "Name": "Target Corp", "GICS sector": "Consumer Defensive", "GICS industry": "Discount Stores", "Current price": 156.42999267578125, "Beta": 0.4508502895589728, "Last month": -0.0413653652590328, "Last 3 months": 0.206880533166448, "Last year": 0.8145417208647601, "YTD Performance": 0.5992266402889896, "200 avg": 0.237667064244438, "Z-score 20MA": -0.7099954779429484, "Efficiency Score": 0.1558649931908088, "Sharpe Ratio": 2.1039307552710724, "Trend rank": 1, "Sharp ratio rank": 11.0, "Rank efficiency": 15.0, "Rank 1M": 137.0, "Rank 3M": 39.0, "Rank 1 Jaar": 32.0, "Rank 200 MAVG": 35.0, "Total score": 59.24333333333333, "Total score incl beta": 55.98998739877721, "Sector momentum rank": 7}, {"Action": "N", "Rank all": 26, "Rank all past": 99, "Delta": 73, "Rank shortterm": 101, "Rank longterm": 14, "Trend": "Bullish", "Ticker": "BE", "Name": "Bloom Energy Corp", "GICS sector": "Industrials", "GICS industry": "Electrical Equipment & Parts", "Current price": 291.25, "Beta": 4.230594102327607, "Last month": 0.3818379944781096, "Last 3 months": -0.0378262693930783, "Last year": 2.4438926457489965, "YTD Performance": 1.9511601255954931, "200 avg": 0.4230008676997348, "Z-score 20MA": 1.3490537831332114, "Efficiency Score": 0.0840497436325549, "Sharpe Ratio": 1.6530597046255782, "Trend rank": 1, "Sharp ratio rank": 23.0, "Rank efficiency": 87.0, "Rank 1M": 2.0, "Rank 3M": 155.0, "Rank 1 Jaar": 10.0, "Rank 200 MAVG": 22.0, "Total score": 60.79333333333333, "Total score incl beta": 80.43319174608362, "Sector momentum rank": 4}, {"Action": "N", "Rank all": 27, "Rank all past": 37, "Delta": 10, "Rank shortterm": 71, "Rank longterm": 31, "Trend": "Bullish", "Ticker": "NASDAQ:BIIB", "Name": NaN, "GICS sector": "Healthcare", "GICS industry": "Drug Manufacturers - General", "Current price": 227.07000732421875, "Beta": 0.324665685837241, "Last month": 0.0392220014838387, "Last 3 months": 0.050958112978036, "Last year": 0.6210023155059599, "YTD Performance": 0.2769654592927926, "200 avg": 0.167694290963952, "Z-score 20MA": 1.226391150134489, "Efficiency Score": 0.1128933855793593, "Sharpe Ratio": 1.5604181684892393, "Trend rank": 1, "Sharp ratio rank": 32.0, "Rank efficiency": 36.0, "Rank 1M": 59.0, "Rank 3M": 99.0, "Rank 1 Jaar": 41.0, "Rank 200 MAVG": 50.0, "Total score": 61.64666666666666, "Total score incl beta": 57.48345573129131, "Sector momentum rank": 2}, {"Action": "N", "Rank all": 28, "Rank all past": 46, "Delta": 18, "Rank shortterm": 122, "Rank longterm": 6, "Trend": "Bullish", "Ticker": "STX", "Name": "Seagate Technology Holdings PLC", "GICS sector": "Technology", "GICS industry": "Computer Hardware", "Current price": 913.4500122070312, "Beta": 2.3544306512046496, "Last month": 0.1017429531830294, "Last 3 months": -0.0526608733213587, "Last year": 2.892375791737902, "YTD Performance": 2.1871386749300483, "200 avg": 0.4260940658876972, "Z-score 20MA": 1.0738483240893313, "Efficiency Score": 0.1308635803470911, "Sharpe Ratio": 2.1975768335923216, "Trend rank": 1, "Sharp ratio rank": 7.0, "Rank efficiency": 27.0, "Rank 1M": 31.0, "Rank 3M": 167.0, "Rank 1 Jaar": 4.0, "Rank 200 MAVG": 21.0, "Total score": 62.7, "Total score incl beta": 71.19228018305316, "Sector momentum rank": 3}, {"Action": "N", "Rank all": 29, "Rank all past": 69, "Delta": 40, "Rank shortterm": 55, "Rank longterm": 42, "Trend": "Bullish", "Ticker": "NYSE:DE", "Name": NaN, "GICS sector": "Industrials", "GICS industry": "Farm & Heavy Construction Machinery", "Current price": 680.5, "Beta": 0.4776708019382307, "Last month": 0.0795931996730616, "Last 3 months": 0.0727854297704106, "Last year": 0.5016101553898773, "YTD Performance": 0.4658512174382636, "200 avg": 0.1666149649517285, "Z-score 20MA": -0.6010500141342698, "Efficiency Score": 0.1104272296799474, "Sharpe Ratio": 1.4275089801040388, "Trend rank": 1, "Sharp ratio rank": 46.0, "Rank efficiency": 42.0, "Rank 1M": 41.0, "Rank 3M": 86.0, "Rank 1 Jaar": 52.0, "Rank 200 MAVG": 52.0, "Total score": 64.79833333333333, "Total score incl beta": 61.41372718475941, "Sector momentum rank": 4}];
+        const columns = ["Action", "Rank all", "Rank all past", "Delta", "Rank shortterm", "Rank longterm", "Trend", "Ticker", "Name", "GICS sector", "GICS industry", "Current price", "Beta", "Last month", "Last 3 months", "Last year", "YTD Performance", "200 avg", "Z-score 20MA", "Efficiency Score", "Sharpe Ratio", "Trend rank", "Sharp ratio rank", "Rank efficiency", "Rank 1M", "Rank 3M", "Rank 1 Jaar", "Rank 200 MAVG", "Total score", "Total score incl beta", "Sector momentum rank"];
+
+        const tableHeaders = document.getElementById('table-headers');
+        const tableBody = document.getElementById('table-body');
+        const noResults = document.getElementById('no-results');
+
+        function renderHeaders() {
+            tableHeaders.innerHTML = '';
+            columns.forEach(col => {
+                const th = document.createElement('th');
+                const title = document.createElement('div');
+                title.className = 'col-title';
+                title.innerHTML = col;
+                th.appendChild(title);
+                tableHeaders.appendChild(th);
+            });
+        }
+
+        function formatVal(col, val) {
+            if (val === null || val === undefined) return '';
+            
+            if (typeof val === 'number') {
+                // Percentage columns
+                if (['Last month', 'Last 3 months', 'Last year', 'YTD Performance', '200 avg'].includes(col)) {
+                    return (val * 100).toFixed(2) + '%';
+                }
+                
+                // Keep some decimals for others
+                if (['Beta', 'Efficiency Score', 'Sharpe Ratio', 'Z-score 20MA', 'Total score', 'Total score incl beta'].includes(col)) {
+                    return val.toFixed(2);
+                }
+            }
+            return val;
+        }
+
+        function renderTable() {
+            renderHeaders();
+
+            tableBody.innerHTML = '';
+            
+            if (rawData.length === 0) {
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            noResults.style.display = 'none';
+
+            rawData.forEach(row => {
+                const tr = document.createElement('tr');
+                
+                const action = row['Action'];
+                if (action === 'S') {
+                    tr.classList.add('under-50ma');
+                } else if (action === 'B') {
+                    tr.classList.add('near-20ma');
+                }
+                
+                columns.forEach(col => {
+                    const td = document.createElement('td');
+                    let val = row[col];
+                    
+                    let displayVal = formatVal(col, val);
+                    
+                    if (col === 'Trend') {
+                        if (val === 'Bullish') td.classList.add('trend-bullish');
+                        else if (val === 'Bearish') td.classList.add('trend-bearish');
+                    }
+                    
+                    if (col === 'Delta') {
+                        if (val > 0) {
+                            td.classList.add('delta-positive');
+                            displayVal = '+' + displayVal;
+                        } else if (val < 0) {
+                            td.classList.add('delta-negative');
+                        }
+                    }
+                    
+                    if (String(col).includes('Rank') && typeof val === 'number' && val <= 10 && val > 0) {
+                        td.classList.add('rank-top');
+                    }
+                    
+                    td.innerText = displayVal;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Init
+        renderTable();
+    </script>
+</body>
+</html>
