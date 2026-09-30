@@ -1,0 +1,291 @@
+Ticker,Name,GICS sector,yf_ticker
+NASDAQ:MRNA,Moderna Inc,Healthcare,MRNA
+NYSE:SNOW,Snowflake Inc,Technology,SNOW
+HPE,Hewlett Packard Enterprise Co,Technology,HPE
+MRVL,Marvell Technology Inc,Technology,MRVL
+MPC,Marathon Petroleum Corp,Energy,MPC
+DELL,Dell Technologies Inc,Technology,DELL
+PSX,Phillips 66,Energy,PSX
+ABNB,Airbnb Inc,Consumer Cyclical,ABNB
+ELF,elf Beauty Inc,Consumer Defensive,ELF
+VLO,Valero Energy Corp,Energy,VLO
+FSLY,Fastly Inc,Technology,FSLY
+NASDAQ:TEAM,Atlassian Corp,Technology,TEAM
+TGT,Target Corp,Consumer Defensive,TGT
+NYSE:U,Unity Software Inc,Technology,U
+PANW,Palo Alto Networks Inc,Technology,PANW
+EXPE,"Expedia Group, Inc.",Consumer Cyclical,EXPE
+MRK,Merck & Co Inc,Technology,MRK
+APA,,Energy,APA
+MU,Micron Technology Inc,Semiconductors (Sub),MU
+AMGN,Amgen Inc,Healthcare,AMGN
+TWLO,Twilio Inc,Technology,TWLO
+NASDAQ:ROKU,Roku Inc,Communication Services,ROKU
+TEM,Tempus AI Inc,Healthcare,TEM
+HPQ,HP Inc,Technology,HPQ
+DBX,Dropbox Inc,Technology,DBX
+NEM,Newmont Corporation,Materials,NEM
+NASDAQ:OKTA,Okta Inc,Technology,OKTA
+NET,Cloudflare Inc,Technology,NET
+NYSE:TMO,Thermo Fisher Scientific Inc,Healthcare,TMO
+NYSE:W,Wayfair Inc,Consumer Cyclical,W
+NASDAQ:WDAY,Workday Inc,Technology,WDAY
+ETSY,Etsy Inc,Consumer Defensive,ETSY
+NASDAQ:PYPL,PayPal Holdings Inc,Financial,PYPL
+NASDAQ:MDB,Mongodb Inc,Technology,MDB
+FCX,Freeport-McMoRan Inc,Materials,FCX
+VRTX,Vertex Pharmaceuticals Inc,Healthcare,VRTX
+NYSE:ANET,Arista Networks Inc,Technology,ANET
+NYSE:COP,ConocoPhillips,Energy,COP
+REGN,Regeneron Pharmaceuticals Inc,Healthcare,REGN
+BBY,Best Buy Co Inc,Consumer Cyclical,BBY
+LNG,Cheniere Energy Inc,Energy,LNG
+BNTX,BioNTech SE - ADR,Healthcare,BNTX
+NASDAQ:CRWD,Crowdstrike Holdings Inc,Technology,CRWD
+SNDK,SanDisk Corp,Technology,SNDK
+PLTR,Palantir Technologies Inc,Technology,PLTR
+NASDAQ:SHOP,Shopify Inc.,Technology,SHOP
+JNJ,Johnson & Johnson,Technology,JNJ
+BKNG,Booking Holdings Inc,Consumer Cyclical,BKNG
+NYSE:DE,,Industrials,DE
+NYSE:SCHW,Charles Schwab Corporation Common Stock,Financial,SCHW
+NYSE:LLY,,Healthcare,LLY
+UNP,Union Pacific Corp,Industrials,UNP
+DOCU,Docusign Inc,Technology,DOCU
+RTX,Rtx Corp,Industrials,RTX
+KO,Coca-Cola Co,Consumer Defensive,KO
+XYZ,Block Inc,Technology,XYZ
+NASDAQ:AMAT,Applied Materials Inc,Semiconductors (Sub),AMAT
+CSX,CSX Corp,Industrials,CSX
+NYSE:ABBV,AbbVie Common Stock,Healthcare,ABBV
+NYSE:EOG,EOG Resources Inc,Energy,EOG
+NASDAQ:MTCH,,Communication Services,MTCH
+NYSE:XOM,Exxonmobil Holdings Corp,Energy,XOM
+SKM,SK Telecom Co Ltd,Communication Services,SKM
+NYSE:OXY,Occidental Petroleum Corp,Energy,OXY
+CVX,,Energy,CVX
+B,Barrick Mining Corp,Materials,B
+BMY,Bristol-Myers Squibb Co,Healthcare,BMY
+MSFT,,Technology,MSFT
+SAP,SAP SE,Technology,SAP
+NYSE:BAC,Bank of America Corporation,Financial,BAC
+DHR,,Healthcare,DHR
+ABT,Abbott Laboratories,Healthcare,ABT
+NASDAQ:BIIB,,Healthcare,BIIB
+DVN,Devon Energy Corp,Energy,DVN
+FANG,Diamondback Energy Inc,Energy,FANG
+NYSE:SE,Sea Ltd,Communication Services,SE
+CNC,Centene Corp,Healthcare,CNC
+STX,Seagate Technology Holdings PLC,Technology,STX
+NYSE:MMM,3M Co,Industrials,MMM
+NBIS,Nebius Group NV,Technology,NBIS
+NASDAQ:ASML,ASML Holding NV,Technology,ASML
+NOW,ServiceNow Inc,Technology,NOW
+NYSE:LYV,Live Nation Entertainment Inc,Communication Services,LYV
+CROX,Crocs Inc,Consumer Cyclical,CROX
+NASDAQ:SMCI,Super Micro Computer Inc,Semiconductors (Sub),SMCI
+NYSE:MET,Metlife Inc,Financial,MET
+MNST,Monster Beverage Corp,Consumer Defensive,MNST
+NYSE:JPM,JPMorgan Chase & Co,Financial,JPM
+NUE,Nucor Corp,Materials,NUE
+CF,"CF Industries Holdings, Inc.",Materials,CF
+NYSE:GD,General Dynamics Corp,Industrials,GD
+ET,Energy Transfer LP (Texas) Unit,Energy,ET
+NYSE:MA,Mastercard Inc,Financial,MA
+DDOG,Datadog Inc,Technology,DDOG
+HIMS,Hims & Hers Health Inc,Healthcare,HIMS
+NASDAQ:AFRM,Affirm Holdings Inc,Financial,AFRM
+WELL,Welltower Inc,Real Estate,WELL
+NASDAQ:GILD,"Gilead Sciences, Inc",Healthcare,GILD
+NYSE:GE,General Electric Company,Technology,GE
+NYSE:USB,US Bancorp,Financial,USB
+NYSE:LMT,Lockheed Martin Corp,Industrials,LMT
+ETN,Eaton Corporation PLC,Industrials,ETN
+PFE,Pfizer Inc,Healthcare,PFE
+FDX,FedEx Corp,Industrials,FDX
+SHW,Sherwin-Williams Co,Materials,SHW
+CBRE,CBRE Group Inc,Real Estate,CBRE
+NYSE:GM,General Motors Co,Consumer Cyclical,GM
+LRCX,Lam Research Corp,Semiconductors (Sub),LRCX
+KDP,Keurig Dr Pepper Inc,Consumer Defensive,KDP
+LYB,Lyondellbasell Industries N.v,Materials,LYB
+PSA,Public Storage,Real Estate,PSA
+NYSE:V,Visa Inc,Financial,V
+ECL,Ecolab Inc,Materials,ECL
+NYSE:PNC,PNC Financial Services Group Inc,Financial,PNC
+NYSE:BLK,BlackRock Inc,Financial,BLK
+MELI,MercadoLibre Inc,Consumer Cyclical,MELI
+EQIX,,Real Estate,EQIX
+CRM,Salesforce Inc,Technology,CRM
+TSM,Taiwan Semicndctr Mnufctrng Co Ltd,Semiconductors (Sub),TSM
+NYSE:VZ,Verizon Communications Inc,Communication Services,VZ
+SPG,Simon Property Group Inc,Real Estate,SPG
+NASDAQ:MDLZ,,Consumer Defensive,MDLZ
+AMD,Advanced Micro Devices Inc,Semiconductors (Sub),AMD
+PINS,,Communication Services,PINS
+DLR,,Real Estate,DLR
+OKE,ONEOK Inc,Energy,OKE
+DAL,Delta Air Lines Inc,Industrials,DAL
+NASDAQ:ADBE,Adobe Inc,Technology,ADBE
+KMB,Kimberly-Clark Corp,Consumer Defensive,KMB
+GIS,General Mills Inc,Consumer Defensive,GIS
+NYSE:SLB,,Energy,SLB
+UBER,Uber Technologies Inc,Technology,UBER
+EIX,Edison International,Utilities,EIX
+APD,Air Products and Chemicals Inc,Materials,APD
+VTR,Ventas Inc,Real Estate,VTR
+HST,"Host Hotels & Resorts, Inc.",Real Estate,HST
+WDC,Western Digital Corp,Technology,WDC
+NASDAQ:NVDA,,Semiconductors (Sub),NVDA
+AAOI,Applied Optoelectronics Inc,Technology,AAOI
+PM,Philip Morris International Inc.,Consumer Defensive,PM
+NYSE:RCL,Royal Caribbean Cruises Ltd,Consumer Cyclical,RCL
+COF,Capital One Financial Corp,Financial,COF
+SONY,,Technology,SONY
+BKR,Baker Hughes Co,Energy,BKR
+KHC,Kraft Heinz Co,Consumer Defensive,KHC
+HUBS,HubSpot Inc,Technology,HUBS
+NASDAQ:WBD,Warner Bros Discovery Inc,Communication Services,WBD
+CHWY,Chewy Inc,Consumer Cyclical,CHWY
+MS,Morgan Stanley,Financial,MS
+IRM,Iron Mountain Inc,Real Estate,IRM
+NYSE:CMG,,Consumer Cyclical,CMG
+NASDAQ:UAL,United Airlines Holdings Inc,Industrials,UAL
+DIS,Walt Disney Co,Communication Services,DIS
+NASDAQ:INTU,Intuit Inc,Technology,INTU
+SBUX,Starbucks Corp,Consumer Cyclical,SBUX
+HOOD,Robinhood Markets Inc,Financial,HOOD
+NYSE:M,Macy's Inc,Consumer Cyclical,M
+EXR,Extra Space Storage Inc.,Real Estate,EXR
+C,Citigroup Inc.,Financial,C
+NASDAQ:ADSK,Autodesk Inc,Technology,ADSK
+NASDAQ:CMCSA,Comcast Corp,Communication Services,CMCSA
+WY,Weyerhaeuser Co,Real Estate,WY
+NASDAQ:CSCO,Cisco Systems Inc,Technology,CSCO
+NASDAQ:KLAC,KLA Corp,Semiconductors (Sub),KLAC
+NASDAQ:TTWO,"TAKE-TWO INTERACTIVE SOFTWARE, INC Common Stock",Communication Services,TTWO
+NASDAQ:AMZN,Amazon.com Inc,Consumer Cyclical,AMZN
+DOW,Dow Inc,Materials,DOW
+NASDAQ:AAPL,Apple Inc,Technology,AAPL
+PPG,PPG Industries Inc,Materials,PPG
+SPOT,Spotify Technology SA,Technology,SPOT
+CVNA,Carvana Co,Consumer Defensive,CVNA
+NYSE:HD,Home Depot Inc,Consumer Cyclical,HD
+CELH,Celsius Holdings Inc,Consumer Defensive,CELH
+T,,Communication Services,T
+O,Realty Income Corp,Real Estate,O
+NYSE:GEV,GE Vernova Inc,Technology,GEV
+ARM,Arm Holdings PLC - ADR,Semiconductors (Sub),ARM
+INTC,Intel Corp,Semiconductors (Sub),INTC
+NYSE:WFC,Wells Fargo & Company,Financial,WFC
+CVS,,Healthcare,CVS
+MOS,Mosaic Co,Materials,MOS
+UNH,UnitedHealth Group Inc,Healthcare,UNH
+GS,,Financial,GS
+PAAS,,Materials,PAAS
+HUT,Hut 8 Corp,Technology,HUT
+D,Dominion Energy Inc,Utilities,D
+BRK.B,Berkshire Hathaway Inc Class B,Financial,BRK.B
+NOC,Northrop Grumman Corp,Industrials,NOC
+SYK,Stryker Corp,Technology,SYK
+CL,Colgate-Palmolive Company,Consumer Defensive,CL
+NYSE:HAL,Halliburton Co,Energy,HAL
+TXN,Texas Instruments Inc,Semiconductors (Sub),TXN
+CTVA,Corteva Inc,Materials,CTVA
+TT,Trane Technologies PLC,Industrials,TT
+FE,FirstEnergy Corp,Utilities,FE
+NYSE:CAT,,Industrials,CAT
+HSY,Hershey Co,Consumer Defensive,HSY
+ED,Consolidated Edison Inc,Utilities,ED
+HCA,HCA Healthcare Inc,Healthcare,HCA
+DD,DuPont de Nemours Inc,Materials,DD
+NYSE:TM,Toyota Motor Corp,Technology,TM
+CRWV,CoreWeave Inc,Technology,CRWV
+AXP,American Express Co,Financial,AXP
+VMC,Vulcan Materials Co,Materials,VMC
+STM,STMicroelectronics NV,Technology,STM
+NYSE:BA,Boeing Co,Industrials,BA
+WMB,Williams Companies Inc,Energy,WMB
+BABA,Alibaba Group Holding Ltd - ADR,Consumer Defensive,BABA
+KMI,Kinder Morgan Inc,Energy,KMI
+AMT,,Real Estate,AMT
+NYSE:LOW,Lowe's Companies Inc,Consumer Cyclical,LOW
+STLD,Steel Dynamics Inc,Materials,STLD
+XEL,Xcel Energy Inc,Utilities,XEL
+NASDAQ:CHTR,Charter Communications Inc,Communication Services,CHTR
+ETR,Entergy Corp,Utilities,ETR
+PLD,"Prologis, Inc.",Real Estate,PLD
+BE,Bloom Energy Corp,Industrials,BE
+UPS,United Parcel Service Inc,Industrials,UPS
+NASDAQ:ZS,Zscaler Inc,Technology,ZS
+NYSE:NVO,Novo Nordisk A/S,Healthcare,NVO
+MP,Mp Materials Corp,Materials,MP
+NASDAQ:EBAY,eBay Inc,Consumer Cyclical,EBAY
+EQT,EQT Corp,Energy,EQT
+DUK,Duke Energy Corp,Utilities,DUK
+NYSE:VRT,Vertiv Holdings Co,Technology,VRT
+EXC,Exelon Corp,Utilities,EXC
+SO,Southern Co,Utilities,SO
+AEP,American Electric Power Company Inc,Utilities,AEP
+NASDAQ:PEP,,Consumer Defensive,PEP
+PG,Procter & Gamble Co,Consumer Defensive,PG
+LIN,Linde PLC,Materials,LIN
+NEE,NextEra Energy Inc,Utilities,NEE
+GOOGL,Alphabet Inc Class A,Communication Services,GOOGL
+DKNG,DraftKings Inc,Consumer Defensive,DKNG
+WEC,WEC Energy Group Inc,Real Estate,WEC
+NASDAQ:GOOG,Alphabet Inc Class C,Communication Services,GOOG
+COST,Costco Wholesale Corp,Consumer Defensive,COST
+MO,Altria Group Inc,Consumer Defensive,MO
+NFLX,Netflix Inc,Communication Services,NFLX
+AIG,American International Group Inc,Financial,AIG
+IBM,IBM Common Stock,Technology,IBM
+VICI,VICI Properties Inc,Real Estate,VICI
+UPST,,Financial,UPST
+HON,Honeywell International Inc,Technology,HON
+KWEB,KraneShares CSI China Internet ETF,Technology,KWEB
+NASDAQ:PDD,PDD Holdings Inc - ADR,Consumer Cyclical,PDD
+SRE,Sempra,Utilities,SRE
+MCD,McDonald's Corp,Consumer Cyclical,MCD
+IREN,IREN Ltd,Technology,IREN
+NASDAQ:MCHP,Microchip Technology Inc,Semiconductors (Sub),MCHP
+STZ,Constellation Brands Inc,Consumer Defensive,STZ
+IONQ,IONQ Inc,Technology,IONQ
+NYSE:LUV,Southwest Airlines Co,Industrials,LUV
+CCL,Carnival Corporation Ltd,Consumer Cyclical,CCL
+ALB,,Materials,ALB
+AVGO,Broadcom Inc,Semiconductors (Sub),AVGO
+SBAC,SBA Communications Corp,Real Estate,SBAC
+NASDAQ:ENPH,Enphase Energy Inc,Technology,ENPH
+MLM,Martin Marietta Materials Inc,Materials,MLM
+PEG,Public Service Enterprise Group Inc,Utilities,PEG
+NASDAQ:CEG,Constellation Energy Corp,Utilities,CEG
+RKLB,,Industrials,RKLB
+NASDAQ:TMUS,T-Mobile Us Inc,Communication Services,TMUS
+APLD,Applied Digital Corp,Technology,APLD
+COIN,Coinbase Global Inc,Financial,COIN
+LVS,Las Vegas Sands Corp.,Consumer Defensive,LVS
+FISV,Fiserv Inc,Financial,FISV
+NYSE:ORCL,,Technology,ORCL
+ISRG,Intuitive Surgical Inc,Healthcare,ISRG
+GLXY,Galaxy Digital Inc,Financial,GLXY
+MSTR,Strategy Inc Class A,Technology,MSTR
+WMT,Walmart Inc,Consumer Defensive,WMT
+NYSE:TJX,TJX Companies Inc,Consumer Cyclical,TJX
+KR,,Consumer Defensive,KR
+CCI,Crown Castle Inc,Real Estate,CCI
+LULU,Lululemon Athletica Inc,Consumer Cyclical,LULU
+NYSE:GAP,Gap Inc,Consumer Cyclical,GAP
+NASDAQ:QCOM,Qualcomm Inc,Semiconductors (Sub),QCOM
+ASTS,AST SpaceMobile Inc,Communication Services,ASTS
+VST,Vistra Corp,Utilities,VST
+NASDAQ:META,Meta Platforms Inc,Communication Services,META
+NKE,Nike Inc,Consumer Cyclical,NKE
+TLN,Talen Energy Corp,Utilities,TLN
+DECK,Deckers Outdoor Corp,Consumer Cyclical,DECK
+GME,GameStop Corp,Consumer Defensive,GME
+TSLA,Tesla Inc,Consumer Cyclical,TSLA
+NRG,NRG Energy Inc,Materials,NRG
+NASDAQ:BIDU,Baidu Inc,Technology,BIDU
+OKLO,Oklo Inc,Utilities,OKLO
+NASDAQ:APP,Applovin Corp,Communication Services,APP

@@ -1,0 +1,47 @@
+# Interactive Brokers (IB) Momentum Screener
+
+Een robuuste Python-screener voor het analyseren en rangschikken van aandelen op basis van momentum, volatiliteit en sectortrends. Deze tool leest data uit een spreadsheet in, haalt live koersdata op via Yahoo Finance (tot 1 jaar terug), berekent de scores en genereert een interactief, lokaal HTML-dashboard met de resultaten.
+
+## Kenmerken
+- **Live Koersdata:** Haalt betrouwbaar dagkoersen en historische data op (yfinance).
+- **Momentum Scoring:** Berekent uitgebreide metrics zoals 1M, 3M, 1Y performance, YTD, en Beta ten opzichte van de S&P500 (SPY).
+- **Dynamische Ranking:** Beoordeelt aandelen op basis van een samengestelde wiskundige score: `(((1M Rank * 15%) + (3M Rank * 40%) + (1Y Rank * 45%)) * 70%) + (200 MAVG Rank * 20%) + (Scaled Sector Rank * 10%)`.
+- **Trend Indicatie (Action):** Bepaalt automatische koop/verkoop zones (`B` voor pullback naar 20MA, `S` voor zwakte onder 50MA, en `N` voor neutraal).
+- **Historische Delta:** Berekent dynamisch de delta (verschil in rangschikking) ten opzichte van exact ~30 kalenderdagen geleden in dezelfde run.
+- **HTML Dashboard:** Exporteert alle bevindingen naar een interactief, filterbaar dashboard (`ib_screener_dashboard.html`).
+
+## Structuur
+* `data.csv`: De originele lijst van aandelen geïmporteerd vanuit een Google Spreadsheet.
+* `extract_tickers.py`: Parsing script dat `data.csv` opschoont, tickers (bijv. "NASDAQ:MSFT") omzet naar geldige Yahoo Finance tickers ("MSFT") en opslaat als `ib_tickers.csv`.
+* `ib_momentum_screener.py`: De hoofdengine. Downloadt alle data, past de wiskundige rankings en sector-wegingen toe en genereert `ib_screener_result_final.csv`.
+* `ib_generate_html.py`: Neemt de finale CSV in en bouwt hier een lokaal, visueel HTML-dashboard van.
+* `analyze.py`: Bevat extra analyse- en debug-scripts.
+
+## Installatie & Gebruik
+
+### 1. Requirements
+Zorg dat je Python geïnstalleerd hebt. Installeer de afhankelijkheden:
+```bash
+pip install pandas yfinance numpy requests
+```
+
+### 2. Draai de Screener
+Zodra je `data.csv` beschikbaar is, kun je het proces starten:
+
+Stap 1: Tickers extraheren en formatteren
+```bash
+python extract_tickers.py
+```
+
+Stap 2: Momentum Screener draaien (Dit kan een paar minuten duren vanwege de data download)
+```bash
+python ib_momentum_screener.py
+```
+
+Stap 3: Het interactieve HTML rapport genereren
+```bash
+python ib_generate_html.py
+```
+
+### 3. Bekijk de resultaten
+Open het pas gegenereerde bestand `ib_screener_dashboard.html` in je webbrowser.

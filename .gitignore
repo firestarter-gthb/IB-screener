@@ -1,0 +1,41 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.vscode/
+.idea/
+*.log
+
+# Je kunt er optioneel voor kiezen om de gedownloade en gegenereerde CSV/HTML bestanden lokaal te houden 
+# en niet te pushen naar github, zodat je repo puur code blijft.
+# ib_tickers.csv
+# ib_screener_history.csv
+# ib_screener_result_final.csv
+# ib_screener_dashboard.html
