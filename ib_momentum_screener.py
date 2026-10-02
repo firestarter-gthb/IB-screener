@@ -31,7 +31,8 @@ def compute_metrics(closes, spy_returns, spy_var, current_year_start, offset=0):
     if len(closes) < 50:
         return None
 
-    current_price = closes.iloc[-1].item() if hasattr(closes.iloc[-1], 'item') else closes.iloc[-1]
+    raw_price = closes.iloc[-1].item() if hasattr(closes.iloc[-1], 'item') else closes.iloc[-1]
+    current_price = round(float(raw_price), 2)
     
     # Momentum metrics
     ret_1m = (current_price / closes.iloc[-22]) - 1 if len(closes) >= 22 else np.nan
