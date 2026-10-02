@@ -488,7 +488,7 @@ def generate_html_report(csv_file, output_html):
                 }}
                 
                 // Keep some decimals for others
-                if (['Beta', 'Efficiency Score', 'Sharpe Ratio', 'Z-score 20MA', 'Total score', 'Total score incl beta'].includes(col)) {{
+                if (['Current price', 'Beta', 'Efficiency Score', 'Sharpe Ratio', 'Z-score 20MA', 'Total score', 'Total score incl beta'].includes(col)) {{
                     return val.toFixed(2);
                 }}
             }}
