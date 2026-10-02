@@ -11,11 +11,11 @@ Een robuuste Python-screener voor het analyseren en rangschikken van aandelen op
 - **HTML Dashboard:** Exporteert alle bevindingen naar een interactief, filterbaar dashboard (`ib_screener_dashboard.html`).
 
 ## Structuur
-* `data.csv`: De originele lijst van aandelen geïmporteerd vanuit een Google Spreadsheet.
+* `data.csv`: De originele lijst van aandelen. Deze csv bevat nu enkel de benodigde kolommen (voornamelijk `Ticker`).
 * `extract_tickers.py`: Parsing script dat `data.csv` opschoont, tickers (bijv. "NASDAQ:MSFT") omzet naar geldige Yahoo Finance tickers ("MSFT") en opslaat als `ib_tickers.csv`.
 * `ib_momentum_screener.py`: De hoofdengine. Downloadt alle data, past de wiskundige rankings en sector-wegingen toe en genereert `ib_screener_result_final.csv`.
 * `ib_generate_html.py`: Neemt de finale CSV in en bouwt hier een lokaal, visueel HTML-dashboard van.
-* `analyze.py`: Bevat extra analyse- en debug-scripts.
+* `analyze.py`: Bevat extra analyse- en debug-scripts. Werkt nu op de gegenereerde `ib_screener_result_final.csv`.
 
 ## 📂 Hoe te Gebruiken
 
@@ -26,7 +26,7 @@ Draai simpelweg het `.bat` bestand om de volledige analyse uit te voeren. Het sc
 *(Let op: Het ophalen van de historische data voor alle aandelen kan 1 à 2 minuten duren. Na afloop opent de software automatisch het dashboard in je browser.)*
 
 2. **Nieuwe lijst verwerken**
-Als je handmatig `data.csv` vernieuwt met een nieuwe download uit je Google Spreadsheet, voer dan één keer `python extract_tickers.py` uit om de lijst te structureren, **voordat** je de screener draait.
+Als je handmatig `data.csv` vernieuwt met nieuwe tickers, voer dan één keer `python extract_tickers.py` uit om de lijst te structureren en namen/sectoren via Yahoo Finance op te halen, **voordat** je de screener draait.
 
 ## ⚙️ Installatie / Vereisten
 

@@ -4,10 +4,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Read the CSV
-file_path = 'data.csv'
+file_path = 'ib_screener_result_final.csv'
 
-# Since the header is on row 15 (index 14), we skip the first 14 rows
-df = pd.read_csv(file_path, skiprows=14)
+df = pd.read_csv(file_path, sep='|')
 
 # Basic cleanup
 df.columns = [str(c).strip() for c in df.columns]
@@ -28,11 +27,11 @@ top_10 = df.sort_values(by='Rank all').head(10)
 
 print("\n--- Top 10 Stocks by Rank All ---")
 for idx, row in top_10.iterrows():
-    print(f"{row['Rank all']}. {row['Name']} ({row['Ticker']}) - Sector: {row.iloc[16]} - Trend: {row.iloc[13]}")
+    print(f"{row['Rank all']}. {row['Name']} ({row['Ticker']}) - Sector: {row['GICS sector']} - Trend: {row['Trend']}")
 
 # Analysis by Sector
 print("\n--- Sector Distribution ---")
-sector_col = df.columns[16] # 1st GICS sector column
+sector_col = 'GICS sector'
 print(df[sector_col].value_counts())
 
 # Best sectors (average rank)

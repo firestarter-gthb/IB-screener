@@ -1,291 +1,292 @@
-Ticker,Name,yf_ticker,GICS sector,GICS industry
-NASDAQ:MRNA,Moderna Inc,MRNA,Healthcare,Biotechnology
-NYSE:SNOW,Snowflake Inc,SNOW,Technology,Software - Application
-HPE,Hewlett Packard Enterprise Co,HPE,Technology,Communication Equipment
-MRVL,Marvell Technology Inc,MRVL,Technology,Semiconductors
-MPC,Marathon Petroleum Corp,MPC,Energy,Oil & Gas Refining & Marketing
-DELL,Dell Technologies Inc,DELL,Technology,Computer Hardware
-PSX,Phillips 66,PSX,Energy,Oil & Gas Refining & Marketing
-ABNB,Airbnb Inc,ABNB,Consumer Cyclical,Travel Services
-ELF,elf Beauty Inc,ELF,Consumer Defensive,Household & Personal Products
-VLO,Valero Energy Corp,VLO,Energy,Oil & Gas Refining & Marketing
-FSLY,Fastly Inc,FSLY,Technology,Software - Application
-NASDAQ:TEAM,Atlassian Corp,TEAM,Technology,Software - Application
-TGT,Target Corp,TGT,Consumer Defensive,Discount Stores
-NYSE:U,Unity Software Inc,U,Technology,Software - Application
-PANW,Palo Alto Networks Inc,PANW,Technology,Software - Infrastructure
-EXPE,"Expedia Group, Inc.",EXPE,Consumer Cyclical,Travel Services
-MRK,Merck & Co Inc,MRK,Healthcare,Drug Manufacturers - General
-APA,,APA,Energy,Oil & Gas E&P
-MU,Micron Technology Inc,MU,Technology,Semiconductors
-AMGN,Amgen Inc,AMGN,Healthcare,Drug Manufacturers - General
-TWLO,Twilio Inc,TWLO,Technology,Software - Infrastructure
-NASDAQ:ROKU,Roku Inc,ROKU,Communication Services,Entertainment
-TEM,Tempus AI Inc,TEM,Healthcare,Health Information Services
-HPQ,HP Inc,HPQ,Technology,Computer Hardware
-DBX,Dropbox Inc,DBX,Technology,Software - Infrastructure
-NEM,Newmont Corporation,NEM,Basic Materials,Gold
-NASDAQ:OKTA,Okta Inc,OKTA,Technology,Software - Infrastructure
-NET,Cloudflare Inc,NET,Technology,Software - Infrastructure
-NYSE:TMO,Thermo Fisher Scientific Inc,TMO,Healthcare,Diagnostics & Research
-NYSE:W,Wayfair Inc,W,Consumer Cyclical,Internet Retail
-NASDAQ:WDAY,Workday Inc,WDAY,Technology,Software - Application
-ETSY,Etsy Inc,ETSY,Consumer Cyclical,Internet Retail
-NASDAQ:PYPL,PayPal Holdings Inc,PYPL,Financial Services,Credit Services
-NASDAQ:MDB,Mongodb Inc,MDB,Technology,Software - Infrastructure
-FCX,Freeport-McMoRan Inc,FCX,Basic Materials,Copper
-VRTX,Vertex Pharmaceuticals Inc,VRTX,Healthcare,Biotechnology
-NYSE:ANET,Arista Networks Inc,ANET,Technology,Computer Hardware
-NYSE:COP,ConocoPhillips,COP,Energy,Oil & Gas E&P
-REGN,Regeneron Pharmaceuticals Inc,REGN,Healthcare,Biotechnology
-BBY,Best Buy Co Inc,BBY,Consumer Cyclical,Specialty Retail
-LNG,Cheniere Energy Inc,LNG,Energy,Oil & Gas Midstream
-BNTX,BioNTech SE - ADR,BNTX,Healthcare,Biotechnology
-NASDAQ:CRWD,Crowdstrike Holdings Inc,CRWD,Technology,Software - Infrastructure
-SNDK,SanDisk Corp,SNDK,Technology,Computer Hardware
-PLTR,Palantir Technologies Inc,PLTR,Technology,Software - Infrastructure
-NASDAQ:SHOP,Shopify Inc.,SHOP,Technology,Software - Application
-JNJ,Johnson & Johnson,JNJ,Healthcare,Drug Manufacturers - General
-BKNG,Booking Holdings Inc,BKNG,Consumer Cyclical,Travel Services
-NYSE:DE,,DE,Industrials,Farm & Heavy Construction Machinery
-NYSE:SCHW,Charles Schwab Corporation Common Stock,SCHW,Financial Services,Capital Markets
-NYSE:LLY,,LLY,Healthcare,Drug Manufacturers - General
-UNP,Union Pacific Corp,UNP,Industrials,Railroads
-DOCU,Docusign Inc,DOCU,Technology,Software - Application
-RTX,Rtx Corp,RTX,Industrials,Aerospace & Defense
-KO,Coca-Cola Co,KO,Consumer Defensive,Beverages - Non-Alcoholic
-XYZ,Block Inc,XYZ,Technology,Software - Infrastructure
-NASDAQ:AMAT,Applied Materials Inc,AMAT,Technology,Semiconductor Equipment & Materials
-CSX,CSX Corp,CSX,Industrials,Railroads
-NYSE:ABBV,AbbVie Common Stock,ABBV,Healthcare,Drug Manufacturers - General
-NYSE:EOG,EOG Resources Inc,EOG,Energy,Oil & Gas E&P
-NASDAQ:MTCH,,MTCH,Communication Services,Internet Content & Information
-NYSE:XOM,Exxonmobil Holdings Corp,XOM,Energy,Oil & Gas Integrated
-SKM,SK Telecom Co Ltd,SKM,Communication Services,Telecom Services
-NYSE:OXY,Occidental Petroleum Corp,OXY,Energy,Oil & Gas E&P
-CVX,,CVX,Energy,Oil & Gas Integrated
-B,Barrick Mining Corp,B,Basic Materials,Gold
-BMY,Bristol-Myers Squibb Co,BMY,Healthcare,Drug Manufacturers - General
-MSFT,,MSFT,Technology,Software - Infrastructure
-SAP,SAP SE,SAP,Technology,Software - Application
-NYSE:BAC,Bank of America Corporation,BAC,Financial Services,Banks - Diversified
-DHR,,DHR,Healthcare,Diagnostics & Research
-ABT,Abbott Laboratories,ABT,Healthcare,Medical Devices
-NASDAQ:BIIB,,BIIB,Healthcare,Drug Manufacturers - General
-DVN,Devon Energy Corp,DVN,Energy,Oil & Gas E&P
-FANG,Diamondback Energy Inc,FANG,Energy,Oil & Gas E&P
-NYSE:SE,Sea Ltd,SE,Consumer Cyclical,Internet Retail
-CNC,Centene Corp,CNC,Healthcare,Healthcare Plans
-STX,Seagate Technology Holdings PLC,STX,Technology,Computer Hardware
-NYSE:MMM,3M Co,MMM,Industrials,Conglomerates
-NBIS,Nebius Group NV,NBIS,Communication Services,Internet Content & Information
-NASDAQ:ASML,ASML Holding NV,ASML,Technology,Semiconductor Equipment & Materials
-NOW,ServiceNow Inc,NOW,Technology,Software - Application
-NYSE:LYV,Live Nation Entertainment Inc,LYV,Communication Services,Entertainment
-CROX,Crocs Inc,CROX,Consumer Cyclical,Footwear & Accessories
-NASDAQ:SMCI,Super Micro Computer Inc,SMCI,Technology,Computer Hardware
-NYSE:MET,Metlife Inc,MET,Financial Services,Insurance - Life
-MNST,Monster Beverage Corp,MNST,Consumer Defensive,Beverages - Non-Alcoholic
-NYSE:JPM,JPMorgan Chase & Co,JPM,Financial Services,Banks - Diversified
-NUE,Nucor Corp,NUE,Basic Materials,Steel
-CF,"CF Industries Holdings, Inc.",CF,Basic Materials,Agricultural Inputs
-NYSE:GD,General Dynamics Corp,GD,Industrials,Aerospace & Defense
-ET,Energy Transfer LP (Texas) Unit,ET,Energy,Oil & Gas Midstream
-NYSE:MA,Mastercard Inc,MA,Financial Services,Credit Services
-DDOG,Datadog Inc,DDOG,Technology,Software - Application
-HIMS,Hims & Hers Health Inc,HIMS,Healthcare,Drug Manufacturers - Specialty & Generic
-NASDAQ:AFRM,Affirm Holdings Inc,AFRM,Financial Services,Credit Services
-WELL,Welltower Inc,WELL,Real Estate,REIT - Healthcare Facilities
-NASDAQ:GILD,"Gilead Sciences, Inc",GILD,Healthcare,Drug Manufacturers - General
-NYSE:GE,General Electric Company,GE,Industrials,Aerospace & Defense
-NYSE:USB,US Bancorp,USB,Financial Services,Banks - Regional
-NYSE:LMT,Lockheed Martin Corp,LMT,Industrials,Aerospace & Defense
-ETN,Eaton Corporation PLC,ETN,Industrials,Specialty Industrial Machinery
-PFE,Pfizer Inc,PFE,Healthcare,Drug Manufacturers - General
-FDX,FedEx Corp,FDX,Industrials,Integrated Freight & Logistics
-SHW,Sherwin-Williams Co,SHW,Basic Materials,Specialty Chemicals
-CBRE,CBRE Group Inc,CBRE,Real Estate,Real Estate Services
-NYSE:GM,General Motors Co,GM,Consumer Cyclical,Auto Manufacturers
-LRCX,Lam Research Corp,LRCX,Technology,Semiconductor Equipment & Materials
-KDP,Keurig Dr Pepper Inc,KDP,Consumer Defensive,Beverages - Non-Alcoholic
-LYB,Lyondellbasell Industries N.v,LYB,Basic Materials,Specialty Chemicals
-PSA,Public Storage,PSA,Real Estate,REIT - Industrial
-NYSE:V,Visa Inc,V,Financial Services,Credit Services
-ECL,Ecolab Inc,ECL,Basic Materials,Specialty Chemicals
-NYSE:PNC,PNC Financial Services Group Inc,PNC,Financial Services,Banks - Regional
-NYSE:BLK,BlackRock Inc,BLK,Financial Services,Asset Management
-MELI,MercadoLibre Inc,MELI,Consumer Cyclical,Internet Retail
-EQIX,,EQIX,Real Estate,REIT - Specialty
-CRM,Salesforce Inc,CRM,Technology,Software - Application
-TSM,Taiwan Semicndctr Mnufctrng Co Ltd,TSM,Technology,Semiconductors
-NYSE:VZ,Verizon Communications Inc,VZ,Communication Services,Telecom Services
-SPG,Simon Property Group Inc,SPG,Real Estate,REIT - Retail
-NASDAQ:MDLZ,,MDLZ,Consumer Defensive,Confectioners
-AMD,Advanced Micro Devices Inc,AMD,Technology,Semiconductors
-PINS,,PINS,Communication Services,Internet Content & Information
-DLR,,DLR,Real Estate,REIT - Specialty
-OKE,ONEOK Inc,OKE,Energy,Oil & Gas Midstream
-DAL,Delta Air Lines Inc,DAL,Industrials,Airlines
-NASDAQ:ADBE,Adobe Inc,ADBE,Technology,Software - Application
-KMB,Kimberly-Clark Corp,KMB,Consumer Defensive,Household & Personal Products
-GIS,General Mills Inc,GIS,Consumer Defensive,Packaged Foods
-NYSE:SLB,,SLB,Energy,Oil & Gas Equipment & Services
-UBER,Uber Technologies Inc,UBER,Technology,Software - Application
-EIX,Edison International,EIX,Utilities,Utilities - Regulated Electric
-APD,Air Products and Chemicals Inc,APD,Basic Materials,Specialty Chemicals
-VTR,Ventas Inc,VTR,Real Estate,REIT - Healthcare Facilities
-HST,"Host Hotels & Resorts, Inc.",HST,Real Estate,REIT - Hotel & Motel
-WDC,Western Digital Corp,WDC,Technology,Computer Hardware
-NASDAQ:NVDA,,NVDA,Technology,Semiconductors
-AAOI,Applied Optoelectronics Inc,AAOI,Technology,Communication Equipment
-PM,Philip Morris International Inc.,PM,Consumer Defensive,Tobacco
-NYSE:RCL,Royal Caribbean Cruises Ltd,RCL,Consumer Cyclical,Travel Services
-COF,Capital One Financial Corp,COF,Financial Services,Credit Services
-SONY,,SONY,Technology,Consumer Electronics
-BKR,Baker Hughes Co,BKR,Energy,Oil & Gas Equipment & Services
-KHC,Kraft Heinz Co,KHC,Consumer Defensive,Packaged Foods
-HUBS,HubSpot Inc,HUBS,Technology,Software - Application
-NASDAQ:WBD,Warner Bros Discovery Inc,WBD,Communication Services,Entertainment
-CHWY,Chewy Inc,CHWY,Consumer Cyclical,Internet Retail
-MS,Morgan Stanley,MS,Financial Services,Capital Markets
-IRM,Iron Mountain Inc,IRM,Real Estate,REIT - Specialty
-NYSE:CMG,,CMG,Consumer Cyclical,Restaurants
-NASDAQ:UAL,United Airlines Holdings Inc,UAL,Industrials,Airlines
-DIS,Walt Disney Co,DIS,Communication Services,Entertainment
-NASDAQ:INTU,Intuit Inc,INTU,Technology,Software - Application
-SBUX,Starbucks Corp,SBUX,Consumer Cyclical,Restaurants
-HOOD,Robinhood Markets Inc,HOOD,Financial Services,Capital Markets
-NYSE:M,Macy's Inc,M,Consumer Cyclical,Department Stores
-EXR,Extra Space Storage Inc.,EXR,Real Estate,REIT - Industrial
-C,Citigroup Inc.,C,Financial Services,Banks - Diversified
-NASDAQ:ADSK,Autodesk Inc,ADSK,Technology,Software - Application
-NASDAQ:CMCSA,Comcast Corp,CMCSA,Communication Services,Telecom Services
-WY,Weyerhaeuser Co,WY,Real Estate,REIT - Specialty
-NASDAQ:CSCO,Cisco Systems Inc,CSCO,Technology,Communication Equipment
-NASDAQ:KLAC,KLA Corp,KLAC,Technology,Semiconductor Equipment & Materials
-NASDAQ:TTWO,"TAKE-TWO INTERACTIVE SOFTWARE, INC Common Stock",TTWO,Communication Services,Electronic Gaming & Multimedia
-NASDAQ:AMZN,Amazon.com Inc,AMZN,Consumer Cyclical,Internet Retail
-DOW,Dow Inc,DOW,Basic Materials,Chemicals
-NASDAQ:AAPL,Apple Inc,AAPL,Technology,Consumer Electronics
-PPG,PPG Industries Inc,PPG,Basic Materials,Specialty Chemicals
-SPOT,Spotify Technology SA,SPOT,Communication Services,Internet Content & Information
-CVNA,Carvana Co,CVNA,Consumer Cyclical,Auto & Truck Dealerships
-NYSE:HD,Home Depot Inc,HD,Consumer Cyclical,Home Improvement Retail
-CELH,Celsius Holdings Inc,CELH,Consumer Defensive,Beverages - Non-Alcoholic
-T,,T,Communication Services,Telecom Services
-O,Realty Income Corp,O,Real Estate,REIT - Retail
-NYSE:GEV,GE Vernova Inc,GEV,Industrials,Specialty Industrial Machinery
-ARM,Arm Holdings PLC - ADR,ARM,Technology,Semiconductors
-INTC,Intel Corp,INTC,Technology,Semiconductors
-NYSE:WFC,Wells Fargo & Company,WFC,Financial Services,Banks - Diversified
-CVS,,CVS,Healthcare,Healthcare Plans
-MOS,Mosaic Co,MOS,Basic Materials,Agricultural Inputs
-UNH,UnitedHealth Group Inc,UNH,Healthcare,Healthcare Plans
-GS,,GS,Financial Services,Capital Markets
-PAAS,,PAAS,Basic Materials,Gold
-HUT,Hut 8 Corp,HUT,Financial Services,Capital Markets
-D,Dominion Energy Inc,D,Utilities,Utilities - Regulated Electric
-BRK.B,Berkshire Hathaway Inc Class B,BRK.B,Unknown,Unknown
-NOC,Northrop Grumman Corp,NOC,Industrials,Aerospace & Defense
-SYK,Stryker Corp,SYK,Healthcare,Medical Devices
-CL,Colgate-Palmolive Company,CL,Consumer Defensive,Household & Personal Products
-NYSE:HAL,Halliburton Co,HAL,Energy,Oil & Gas Equipment & Services
-TXN,Texas Instruments Inc,TXN,Technology,Semiconductors
-CTVA,Corteva Inc,CTVA,Basic Materials,Agricultural Inputs
-TT,Trane Technologies PLC,TT,Industrials,Building Products & Equipment
-FE,FirstEnergy Corp,FE,Utilities,Utilities - Regulated Electric
-NYSE:CAT,,CAT,Industrials,Farm & Heavy Construction Machinery
-HSY,Hershey Co,HSY,Consumer Defensive,Confectioners
-ED,Consolidated Edison Inc,ED,Utilities,Utilities - Regulated Electric
-HCA,HCA Healthcare Inc,HCA,Healthcare,Medical Care Facilities
-DD,DuPont de Nemours Inc,DD,Basic Materials,Specialty Chemicals
-NYSE:TM,Toyota Motor Corp,TM,Consumer Cyclical,Auto Manufacturers
-CRWV,CoreWeave Inc,CRWV,Technology,Software - Infrastructure
-AXP,American Express Co,AXP,Financial Services,Credit Services
-VMC,Vulcan Materials Co,VMC,Basic Materials,Building Materials
-STM,STMicroelectronics NV,STM,Technology,Semiconductors
-NYSE:BA,Boeing Co,BA,Industrials,Aerospace & Defense
-WMB,Williams Companies Inc,WMB,Energy,Oil & Gas Midstream
-BABA,Alibaba Group Holding Ltd - ADR,BABA,Consumer Cyclical,Internet Retail
-KMI,Kinder Morgan Inc,KMI,Energy,Oil & Gas Midstream
-AMT,,AMT,Real Estate,REIT - Specialty
-NYSE:LOW,Lowe's Companies Inc,LOW,Consumer Cyclical,Home Improvement Retail
-STLD,Steel Dynamics Inc,STLD,Basic Materials,Steel
-XEL,Xcel Energy Inc,XEL,Utilities,Utilities - Regulated Electric
-NASDAQ:CHTR,Charter Communications Inc,CHTR,Communication Services,Telecom Services
-ETR,Entergy Corp,ETR,Utilities,Utilities - Regulated Electric
-PLD,"Prologis, Inc.",PLD,Real Estate,REIT - Industrial
-BE,Bloom Energy Corp,BE,Industrials,Electrical Equipment & Parts
-UPS,United Parcel Service Inc,UPS,Industrials,Integrated Freight & Logistics
-NASDAQ:ZS,Zscaler Inc,ZS,Technology,Software - Infrastructure
-NYSE:NVO,Novo Nordisk A/S,NVO,Healthcare,Drug Manufacturers - General
-MP,Mp Materials Corp,MP,Basic Materials,Other Industrial Metals & Mining
-NASDAQ:EBAY,eBay Inc,EBAY,Consumer Cyclical,Internet Retail
-EQT,EQT Corp,EQT,Energy,Oil & Gas E&P
-DUK,Duke Energy Corp,DUK,Utilities,Utilities - Regulated Electric
-NYSE:VRT,Vertiv Holdings Co,VRT,Industrials,Electrical Equipment & Parts
-EXC,Exelon Corp,EXC,Utilities,Utilities - Regulated Electric
-SO,Southern Co,SO,Utilities,Utilities - Regulated Electric
-AEP,American Electric Power Company Inc,AEP,Utilities,Utilities - Regulated Electric
-NASDAQ:PEP,,PEP,Consumer Defensive,Beverages - Non-Alcoholic
-PG,Procter & Gamble Co,PG,Consumer Defensive,Household & Personal Products
-LIN,Linde PLC,LIN,Basic Materials,Specialty Chemicals
-NEE,NextEra Energy Inc,NEE,Utilities,Utilities - Regulated Electric
-GOOGL,Alphabet Inc Class A,GOOGL,Communication Services,Internet Content & Information
-DKNG,DraftKings Inc,DKNG,Consumer Cyclical,Gambling
-WEC,WEC Energy Group Inc,WEC,Utilities,Utilities - Regulated Electric
-NASDAQ:GOOG,Alphabet Inc Class C,GOOG,Communication Services,Internet Content & Information
-COST,Costco Wholesale Corp,COST,Consumer Defensive,Discount Stores
-MO,Altria Group Inc,MO,Consumer Defensive,Tobacco
-NFLX,Netflix Inc,NFLX,Communication Services,Entertainment
-AIG,American International Group Inc,AIG,Financial Services,Insurance - Diversified
-IBM,IBM Common Stock,IBM,Technology,Information Technology Services
-VICI,VICI Properties Inc,VICI,Real Estate,REIT - Diversified
-UPST,,UPST,Financial Services,Credit Services
-HON,Honeywell International Inc,HON,Industrials,Conglomerates
-KWEB,KraneShares CSI China Internet ETF,KWEB,Unknown,Unknown
-NASDAQ:PDD,PDD Holdings Inc - ADR,PDD,Consumer Cyclical,Internet Retail
-SRE,Sempra,SRE,Utilities,Utilities - Diversified
-MCD,McDonald's Corp,MCD,Consumer Cyclical,Restaurants
-IREN,IREN Ltd,IREN,Financial Services,Capital Markets
-NASDAQ:MCHP,Microchip Technology Inc,MCHP,Technology,Semiconductors
-STZ,Constellation Brands Inc,STZ,Consumer Defensive,Beverages - Brewers
-IONQ,IONQ Inc,IONQ,Technology,Computer Hardware
-NYSE:LUV,Southwest Airlines Co,LUV,Industrials,Airlines
-CCL,Carnival Corporation Ltd,CCL,Consumer Cyclical,Travel Services
-ALB,,ALB,Basic Materials,Specialty Chemicals
-AVGO,Broadcom Inc,AVGO,Technology,Semiconductors
-SBAC,SBA Communications Corp,SBAC,Real Estate,REIT - Specialty
-NASDAQ:ENPH,Enphase Energy Inc,ENPH,Technology,Solar
-MLM,Martin Marietta Materials Inc,MLM,Basic Materials,Building Materials
-PEG,Public Service Enterprise Group Inc,PEG,Utilities,Utilities - Regulated Electric
-NASDAQ:CEG,Constellation Energy Corp,CEG,Utilities,Utilities - Independent Power Producers
-RKLB,,RKLB,Industrials,Aerospace & Defense
-NASDAQ:TMUS,T-Mobile Us Inc,TMUS,Communication Services,Telecom Services
-APLD,Applied Digital Corp,APLD,Technology,Information Technology Services
-COIN,Coinbase Global Inc,COIN,Financial Services,Financial Data & Stock Exchanges
-LVS,Las Vegas Sands Corp.,LVS,Consumer Cyclical,Resorts & Casinos
-FISV,Fiserv Inc,FISV,Unknown,Unknown
-NYSE:ORCL,,ORCL,Technology,Software - Infrastructure
-ISRG,Intuitive Surgical Inc,ISRG,Healthcare,Medical Instruments & Supplies
-GLXY,Galaxy Digital Inc,GLXY,Financial Services,Capital Markets
-MSTR,Strategy Inc Class A,MSTR,Technology,Software - Application
-WMT,Walmart Inc,WMT,Consumer Defensive,Discount Stores
-NYSE:TJX,TJX Companies Inc,TJX,Consumer Cyclical,Apparel Retail
-KR,,KR,Consumer Defensive,Grocery Stores
-CCI,Crown Castle Inc,CCI,Real Estate,REIT - Specialty
-LULU,Lululemon Athletica Inc,LULU,Consumer Cyclical,Apparel Retail
-NYSE:GAP,Gap Inc,GAP,Consumer Cyclical,Apparel Retail
-NASDAQ:QCOM,Qualcomm Inc,QCOM,Technology,Semiconductors
-ASTS,AST SpaceMobile Inc,ASTS,Technology,Communication Equipment
-VST,Vistra Corp,VST,Utilities,Utilities - Independent Power Producers
-NASDAQ:META,Meta Platforms Inc,META,Communication Services,Internet Content & Information
-NKE,Nike Inc,NKE,Consumer Cyclical,Footwear & Accessories
-TLN,Talen Energy Corp,TLN,Utilities,Utilities - Independent Power Producers
-DECK,Deckers Outdoor Corp,DECK,Consumer Cyclical,Footwear & Accessories
-GME,GameStop Corp,GME,Consumer Cyclical,Specialty Retail
-TSLA,Tesla Inc,TSLA,Consumer Cyclical,Auto Manufacturers
-NRG,NRG Energy Inc,NRG,Utilities,Utilities - Independent Power Producers
-NASDAQ:BIDU,Baidu Inc,BIDU,Communication Services,Internet Content & Information
-OKLO,Oklo Inc,OKLO,Utilities,Utilities - Independent Power Producers
-NASDAQ:APP,Applovin Corp,APP,Communication Services,Advertising Agencies
+Ticker,yf_ticker,Name,GICS sector,GICS industry
+NASDAQ:MRNA,MRNA,"Moderna, Inc.",Healthcare,Biotechnology
+NYSE:SNOW,SNOW,Snowflake Inc.,Technology,Software - Application
+HPE,HPE,Hewlett Packard Enterprise Company,Technology,Communication Equipment
+MRVL,MRVL,"Marvell Technology, Inc.",Technology,Semiconductors
+MPC,MPC,Marathon Petroleum Corporation,Energy,Oil & Gas Refining & Marketing
+DELL,DELL,Dell Technologies Inc.,Technology,Computer Hardware
+PSX,PSX,Phillips 66,Energy,Oil & Gas Refining & Marketing
+ABNB,ABNB,"Airbnb, Inc.",Consumer Cyclical,Travel Services
+ELF,ELF,"e.l.f. Beauty, Inc.",Consumer Defensive,Household & Personal Products
+VLO,VLO,Valero Energy Corporation,Energy,Oil & Gas Refining & Marketing
+FSLY,FSLY,"Fastly, Inc.",Technology,Software - Application
+NASDAQ:TEAM,TEAM,Atlassian Corporation,Technology,Software - Application
+TGT,TGT,Target Corporation,Consumer Defensive,Discount Stores
+NYSE:U,U,Unity Software Inc.,Technology,Software - Application
+PANW,PANW,"Palo Alto Networks, Inc.",Technology,Software - Infrastructure
+EXPE,EXPE,"Expedia Group, Inc.",Consumer Cyclical,Travel Services
+MRK,MRK,"Merck & Co., Inc.",Healthcare,Drug Manufacturers - General
+APA,APA,APA Corporation,Energy,Oil & Gas E&P
+MU,MU,"Micron Technology, Inc.",Technology,Semiconductors
+AMGN,AMGN,Amgen Inc.,Healthcare,Drug Manufacturers - General
+TWLO,TWLO,Twilio Inc.,Technology,Software - Infrastructure
+NASDAQ:ROKU,ROKU,"Roku, Inc.",Communication Services,Entertainment
+TEM,TEM,"Tempus AI, Inc.",Healthcare,Health Information Services
+HPQ,HPQ,HP Inc.,Technology,Computer Hardware
+DBX,DBX,"Dropbox, Inc.",Technology,Software - Infrastructure
+NEM,NEM,Newmont Corporation,Basic Materials,Gold
+NASDAQ:OKTA,OKTA,"Okta, Inc.",Technology,Software - Infrastructure
+NET,NET,"Cloudflare, Inc.",Technology,Software - Infrastructure
+NYSE:TMO,TMO,Thermo Fisher Scientific Inc.,Healthcare,Diagnostics & Research
+NYSE:W,W,Wayfair Inc.,Consumer Cyclical,Internet Retail
+NASDAQ:WDAY,WDAY,"Workday, Inc.",Technology,Software - Application
+ETSY,ETSY,"Etsy, Inc.",Consumer Cyclical,Internet Retail
+NASDAQ:PYPL,PYPL,"PayPal Holdings, Inc.",Financial Services,Credit Services
+NASDAQ:MDB,MDB,"MongoDB, Inc.",Technology,Software - Infrastructure
+FCX,FCX,Freeport-McMoRan Inc.,Basic Materials,Copper
+VRTX,VRTX,Vertex Pharmaceuticals Incorporated,Healthcare,Biotechnology
+NYSE:ANET,ANET,"Arista Networks, Inc.",Technology,Computer Hardware
+NYSE:COP,COP,ConocoPhillips,Energy,Oil & Gas E&P
+REGN,REGN,"Regeneron Pharmaceuticals, Inc.",Healthcare,Biotechnology
+BBY,BBY,"Best Buy Co., Inc.",Consumer Cyclical,Specialty Retail
+LNG,LNG,"Cheniere Energy, Inc.",Energy,Oil & Gas Midstream
+BNTX,BNTX,BioNTech SE,Healthcare,Biotechnology
+NASDAQ:CRWD,CRWD,"CrowdStrike Holdings, Inc.",Technology,Software - Infrastructure
+SNDK,SNDK,Sandisk Corporation,Technology,Computer Hardware
+PLTR,PLTR,Palantir Technologies Inc.,Technology,Software - Infrastructure
+NASDAQ:SHOP,SHOP,Shopify Inc.,Technology,Software - Application
+JNJ,JNJ,Johnson & Johnson,Healthcare,Drug Manufacturers - General
+BKNG,BKNG,Booking Holdings Inc.,Consumer Cyclical,Travel Services
+NYSE:DE,DE,Deere & Company,Industrials,Farm & Heavy Construction Machinery
+NYSE:SCHW,SCHW,The Charles Schwab Corporation,Financial Services,Capital Markets
+NYSE:LLY,LLY,Eli Lilly and Company,Healthcare,Drug Manufacturers - General
+UNP,UNP,Union Pacific Corporation,Industrials,Railroads
+DOCU,DOCU,"DocuSign, Inc.",Technology,Software - Application
+RTX,RTX,RTX Corporation,Industrials,Aerospace & Defense
+KO,KO,The Coca-Cola Company,Consumer Defensive,Beverages - Non-Alcoholic
+XYZ,XYZ,"Block, Inc.",Technology,Software - Infrastructure
+NASDAQ:AMAT,AMAT,"Applied Materials, Inc.",Technology,Semiconductor Equipment & Materials
+CSX,CSX,CSX Corporation,Industrials,Railroads
+NYSE:ABBV,ABBV,AbbVie Inc.,Healthcare,Drug Manufacturers - General
+NYSE:EOG,EOG,"EOG Resources, Inc.",Energy,Oil & Gas E&P
+NASDAQ:MTCH,MTCH,"Match Group, Inc.",Communication Services,Internet Content & Information
+NYSE:XOM,XOM,ExxonMobil Holdings Corporation,Energy,Oil & Gas Integrated
+SKM,SKM,"SK Telecom Co., Ltd.",Communication Services,Telecom Services
+NYSE:OXY,OXY,Occidental Petroleum Corporation,Energy,Oil & Gas E&P
+CVX,CVX,Chevron Corporation,Energy,Oil & Gas Integrated
+B,B,Barrick Mining Corporation,Basic Materials,Gold
+BMY,BMY,Bristol-Myers Squibb Company,Healthcare,Drug Manufacturers - General
+MSFT,MSFT,Microsoft Corporation,Technology,Software - Infrastructure
+SAP,SAP,SAP SE,Technology,Software - Application
+NYSE:BAC,BAC,Bank of America Corporation,Financial Services,Banks - Diversified
+DHR,DHR,Danaher Corporation,Healthcare,Diagnostics & Research
+ABT,ABT,Abbott Laboratories,Healthcare,Medical Devices
+NASDAQ:BIIB,BIIB,Biogen Inc.,Healthcare,Drug Manufacturers - General
+DVN,DVN,Devon Energy Corporation,Energy,Oil & Gas E&P
+FANG,FANG,"Diamondback Energy, Inc.",Energy,Oil & Gas E&P
+NYSE:SE,SE,Sea Limited,Consumer Cyclical,Internet Retail
+CNC,CNC,Centene Corporation,Healthcare,Healthcare Plans
+STX,STX,Seagate Technology Holdings plc,Technology,Computer Hardware
+NYSE:MMM,MMM,3M Company,Industrials,Conglomerates
+NBIS,NBIS,Nebius Group N.V.,Communication Services,Internet Content & Information
+NASDAQ:ASML,ASML,ASML Holding N.V.,Technology,Semiconductor Equipment & Materials
+NOW,NOW,"ServiceNow, Inc.",Technology,Software - Application
+NYSE:LYV,LYV,"Live Nation Entertainment, Inc.",Communication Services,Entertainment
+CROX,CROX,"Crocs, Inc.",Consumer Cyclical,Footwear & Accessories
+NASDAQ:SMCI,SMCI,"Super Micro Computer, Inc.",Technology,Computer Hardware
+NYSE:MET,MET,"MetLife, Inc.",Financial Services,Insurance - Life
+MNST,MNST,Monster Beverage Corporation,Consumer Defensive,Beverages - Non-Alcoholic
+NYSE:JPM,JPM,JPMorgan Chase & Co.,Financial Services,Banks - Diversified
+NUE,NUE,Nucor Corporation,Basic Materials,Steel
+CF,CF,"CF Industries Holdings, Inc.",Basic Materials,Agricultural Inputs
+NYSE:GD,GD,General Dynamics Corporation,Industrials,Aerospace & Defense
+ET,ET,Energy Transfer LP,Energy,Oil & Gas Midstream
+NYSE:MA,MA,Mastercard Incorporated,Financial Services,Credit Services
+DDOG,DDOG,"Datadog, Inc.",Technology,Software - Application
+HIMS,HIMS,"Hims & Hers Health, Inc.",Healthcare,Drug Manufacturers - Specialty & Generic
+NASDAQ:AFRM,AFRM,"Affirm Holdings, Inc.",Financial Services,Credit Services
+WELL,WELL,Welltower Inc.,Real Estate,REIT - Healthcare Facilities
+NASDAQ:GILD,GILD,"Gilead Sciences, Inc.",Healthcare,Drug Manufacturers - General
+NYSE:GE,GE,GE Aerospace,Industrials,Aerospace & Defense
+NYSE:USB,USB,U.S. Bancorp,Financial Services,Banks - Regional
+NYSE:LMT,LMT,Lockheed Martin Corporation,Industrials,Aerospace & Defense
+ETN,ETN,Eaton Corporation plc,Industrials,Specialty Industrial Machinery
+PFE,PFE,Pfizer Inc.,Healthcare,Drug Manufacturers - General
+FDX,FDX,FedEx Corporation,Industrials,Integrated Freight & Logistics
+SHW,SHW,The Sherwin-Williams Company,Basic Materials,Specialty Chemicals
+CBRE,CBRE,"CBRE Group, Inc.",Real Estate,Real Estate Services
+NYSE:GM,GM,General Motors Company,Consumer Cyclical,Auto Manufacturers
+LRCX,LRCX,Lam Research Corporation,Technology,Semiconductor Equipment & Materials
+KDP,KDP,Keurig Dr Pepper Inc.,Consumer Defensive,Beverages - Non-Alcoholic
+LYB,LYB,LyondellBasell Industries N.V.,Basic Materials,Specialty Chemicals
+PSA,PSA,Public Storage,Real Estate,REIT - Industrial
+NYSE:V,V,Visa Inc.,Financial Services,Credit Services
+ECL,ECL,Ecolab Inc.,Basic Materials,Specialty Chemicals
+NYSE:PNC,PNC,"The PNC Financial Services Group, Inc.",Financial Services,Banks - Regional
+NYSE:BLK,BLK,"BlackRock, Inc.",Financial Services,Asset Management
+MELI,MELI,"MercadoLibre, Inc.",Consumer Cyclical,Internet Retail
+EQIX,EQIX,"Equinix, Inc.",Real Estate,REIT - Specialty
+CRM,CRM,"Salesforce, Inc.",Technology,Software - Application
+TSM,TSM,Taiwan Semiconductor Manufacturing Company Limited,Technology,Semiconductors
+NYSE:VZ,VZ,Verizon Communications Inc.,Communication Services,Telecom Services
+SPG,SPG,"Simon Property Group, Inc.",Real Estate,REIT - Retail
+NASDAQ:MDLZ,MDLZ,"Mondelez International, Inc.",Consumer Defensive,Confectioners
+AMD,AMD,"Advanced Micro Devices, Inc.",Technology,Semiconductors
+PINS,PINS,"Pinterest, Inc.",Communication Services,Internet Content & Information
+DLR,DLR,"Digital Realty Trust, Inc.",Real Estate,REIT - Specialty
+OKE,OKE,"ONEOK, Inc.",Energy,Oil & Gas Midstream
+DAL,DAL,"Delta Air Lines, Inc.",Industrials,Airlines
+NASDAQ:ADBE,ADBE,Adobe Inc.,Technology,Software - Application
+KMB,KMB,Kimberly-Clark Corporation,Consumer Defensive,Household & Personal Products
+GIS,GIS,"General Mills, Inc.",Consumer Defensive,Packaged Foods
+NYSE:SLB,SLB,SLB N.V.,Energy,Oil & Gas Equipment & Services
+UBER,UBER,"Uber Technologies, Inc.",Technology,Software - Application
+EIX,EIX,Edison International,Utilities,Utilities - Regulated Electric
+APD,APD,"Air Products and Chemicals, Inc.",Basic Materials,Specialty Chemicals
+VTR,VTR,"Ventas, Inc.",Real Estate,REIT - Healthcare Facilities
+HST,HST,"Host Hotels & Resorts, Inc.",Real Estate,REIT - Hotel & Motel
+WDC,WDC,Western Digital Corporation,Technology,Computer Hardware
+NASDAQ:NVDA,NVDA,NVIDIA Corporation,Technology,Semiconductors
+AAOI,AAOI,"Applied Optoelectronics, Inc.",Technology,Communication Equipment
+PM,PM,Philip Morris International Inc.,Consumer Defensive,Tobacco
+NYSE:RCL,RCL,Royal Caribbean Cruises Ltd.,Consumer Cyclical,Travel Services
+COF,COF,Capital One Financial Corporation,Financial Services,Credit Services
+SONY,SONY,Sony Group Corporation,Technology,Consumer Electronics
+BKR,BKR,Baker Hughes Company,Energy,Oil & Gas Equipment & Services
+KHC,KHC,The Kraft Heinz Company,Consumer Defensive,Packaged Foods
+HUBS,HUBS,"HubSpot, Inc.",Technology,Software - Application
+NASDAQ:WBD,WBD,"Warner Bros. Discovery, Inc.",Communication Services,Entertainment
+CHWY,CHWY,"Chewy, Inc.",Consumer Cyclical,Internet Retail
+MS,MS,Morgan Stanley,Financial Services,Capital Markets
+IRM,IRM,Iron Mountain Incorporated,Real Estate,REIT - Specialty
+NYSE:CMG,CMG,"Chipotle Mexican Grill, Inc.",Consumer Cyclical,Restaurants
+NASDAQ:UAL,UAL,"United Airlines Holdings, Inc.",Industrials,Airlines
+DIS,DIS,The Walt Disney Company,Communication Services,Entertainment
+NASDAQ:INTU,INTU,Intuit Inc.,Technology,Software - Application
+SBUX,SBUX,Starbucks Corporation,Consumer Cyclical,Restaurants
+HOOD,HOOD,"Robinhood Markets, Inc.",Financial Services,Capital Markets
+NYSE:M,M,"Macy's, Inc.",Consumer Cyclical,Department Stores
+EXR,EXR,Extra Space Storage Inc.,Real Estate,REIT - Industrial
+C,C,Citigroup Inc.,Financial Services,Banks - Diversified
+NASDAQ:ADSK,ADSK,"Autodesk, Inc.",Technology,Software - Application
+NASDAQ:CMCSA,CMCSA,Comcast Corporation,Communication Services,Telecom Services
+WY,WY,Weyerhaeuser Company,Real Estate,REIT - Specialty
+NASDAQ:CSCO,CSCO,"Cisco Systems, Inc.",Technology,Communication Equipment
+NASDAQ:KLAC,KLAC,KLA Corporation,Technology,Semiconductor Equipment & Materials
+NASDAQ:TTWO,TTWO,"Take-Two Interactive Software, Inc.",Communication Services,Electronic Gaming & Multimedia
+NASDAQ:AMZN,AMZN,"Amazon.com, Inc.",Consumer Cyclical,Internet Retail
+DOW,DOW,Dow Inc.,Basic Materials,Chemicals
+NASDAQ:AAPL,AAPL,Apple Inc.,Technology,Consumer Electronics
+PPG,PPG,"PPG Industries, Inc.",Basic Materials,Specialty Chemicals
+SPOT,SPOT,Spotify Technology S.A.,Communication Services,Internet Content & Information
+CVNA,CVNA,Carvana Co.,Consumer Cyclical,Auto & Truck Dealerships
+NYSE:HD,HD,"The Home Depot, Inc.",Consumer Cyclical,Home Improvement Retail
+CELH,CELH,"Celsius Holdings, Inc.",Consumer Defensive,Beverages - Non-Alcoholic
+T,T,AT&T Inc.,Communication Services,Telecom Services
+O,O,Realty Income Corporation,Real Estate,REIT - Retail
+NYSE:GEV,GEV,GE Vernova Inc.,Industrials,Specialty Industrial Machinery
+ARM,ARM,Arm Holdings plc,Technology,Semiconductors
+INTC,INTC,Intel Corporation,Technology,Semiconductors
+NYSE:WFC,WFC,Wells Fargo & Company,Financial Services,Banks - Diversified
+CVS,CVS,CVS Health Corporation,Healthcare,Healthcare Plans
+MOS,MOS,The Mosaic Company,Basic Materials,Agricultural Inputs
+UNH,UNH,UnitedHealth Group Incorporated,Healthcare,Healthcare Plans
+GS,GS,"The Goldman Sachs Group, Inc.",Financial Services,Capital Markets
+PAAS,PAAS,Pan American Silver Corp.,Basic Materials,Gold
+HUT,HUT,Hut 8 Corp.,Financial Services,Capital Markets
+D,D,"Dominion Energy, Inc.",Utilities,Utilities - Regulated Electric
+BRK.B,BRK.B,Unknown,Unknown,Unknown
+NOC,NOC,Northrop Grumman Corporation,Industrials,Aerospace & Defense
+SYK,SYK,Stryker Corporation,Healthcare,Medical Devices
+CL,CL,Colgate-Palmolive Company,Consumer Defensive,Household & Personal Products
+NYSE:HAL,HAL,Halliburton Company,Energy,Oil & Gas Equipment & Services
+TXN,TXN,Texas Instruments Incorporated,Technology,Semiconductors
+CTVA,CTVA,"Vylor, Inc.",Basic Materials,Agricultural Inputs
+TT,TT,Trane Technologies plc,Industrials,Building Products & Equipment
+FE,FE,FirstEnergy Corp.,Utilities,Utilities - Regulated Electric
+NYSE:CAT,CAT,Caterpillar Inc.,Industrials,Farm & Heavy Construction Machinery
+HSY,HSY,The Hershey Company,Consumer Defensive,Confectioners
+ED,ED,"Consolidated Edison, Inc.",Utilities,Utilities - Regulated Electric
+HCA,HCA,"HCA Healthcare, Inc.",Healthcare,Medical Care Facilities
+DD,DD,"DuPont de Nemours, Inc.",Basic Materials,Specialty Chemicals
+NYSE:TM,TM,Toyota Motor Corporation,Consumer Cyclical,Auto Manufacturers
+CRWV,CRWV,"CoreWeave, Inc.",Technology,Software - Infrastructure
+AXP,AXP,American Express Company,Financial Services,Credit Services
+VMC,VMC,Vulcan Materials Company,Basic Materials,Building Materials
+STM,STM,STMicroelectronics N.V.,Technology,Semiconductors
+NYSE:BA,BA,The Boeing Company,Industrials,Aerospace & Defense
+WMB,WMB,"The Williams Companies, Inc.",Energy,Oil & Gas Midstream
+BABA,BABA,Alibaba Group Holding Limited,Consumer Cyclical,Internet Retail
+KMI,KMI,"Kinder Morgan, Inc.",Energy,Oil & Gas Midstream
+AMT,AMT,American Tower Corporation,Real Estate,REIT - Specialty
+NYSE:LOW,LOW,"Lowe's Companies, Inc.",Consumer Cyclical,Home Improvement Retail
+STLD,STLD,"Steel Dynamics, Inc.",Basic Materials,Steel
+XEL,XEL,Xcel Energy Inc.,Utilities,Utilities - Regulated Electric
+NASDAQ:CHTR,CHTR,"Charter Communications, Inc.",Communication Services,Telecom Services
+ETR,ETR,Entergy Corporation,Utilities,Utilities - Regulated Electric
+PLD,PLD,"Prologis, Inc.",Real Estate,REIT - Industrial
+BE,BE,Bloom Energy Corporation,Industrials,Electrical Equipment & Parts
+UPS,UPS,"United Parcel Service, Inc.",Industrials,Integrated Freight & Logistics
+NASDAQ:ZS,ZS,"Zscaler, Inc.",Technology,Software - Infrastructure
+NYSE:NVO,NVO,Novo Nordisk A/S,Healthcare,Drug Manufacturers - General
+MP,MP,MP Materials Corp.,Basic Materials,Other Industrial Metals & Mining
+NASDAQ:EBAY,EBAY,eBay Inc.,Consumer Cyclical,Internet Retail
+EQT,EQT,EQT Corporation,Energy,Oil & Gas E&P
+DUK,DUK,Duke Energy Corporation,Utilities,Utilities - Regulated Electric
+NYSE:VRT,VRT,Vertiv Holdings Co,Industrials,Electrical Equipment & Parts
+EXC,EXC,Exelon Corporation,Utilities,Utilities - Regulated Electric
+SO,SO,The Southern Company,Utilities,Utilities - Regulated Electric
+AEP,AEP,"American Electric Power Company, Inc.",Utilities,Utilities - Regulated Electric
+NASDAQ:PEP,PEP,"PepsiCo, Inc.",Consumer Defensive,Beverages - Non-Alcoholic
+PG,PG,The Procter & Gamble Company,Consumer Defensive,Household & Personal Products
+LIN,LIN,Linde plc,Basic Materials,Specialty Chemicals
+NEE,NEE,"NextEra Energy, Inc.",Utilities,Utilities - Regulated Electric
+GOOGL,GOOGL,Alphabet Inc.,Communication Services,Internet Content & Information
+DKNG,DKNG,DraftKings Inc.,Consumer Cyclical,Gambling
+WEC,WEC,"WEC Energy Group, Inc.",Utilities,Utilities - Regulated Electric
+NASDAQ:GOOG,GOOG,Alphabet Inc.,Communication Services,Internet Content & Information
+COST,COST,Costco Wholesale Corporation,Consumer Defensive,Discount Stores
+MO,MO,"Altria Group, Inc.",Consumer Defensive,Tobacco
+NFLX,NFLX,"Netflix, Inc.",Communication Services,Entertainment
+AIG,AIG,"American International Group, Inc.",Financial Services,Insurance - Diversified
+IBM,IBM,International Business Machines Corporation,Technology,Information Technology Services
+VICI,VICI,VICI Properties Inc.,Real Estate,REIT - Diversified
+UPST,UPST,"Upstart Holdings, Inc.",Financial Services,Credit Services
+HON,HON,Honeywell International Inc.,Industrials,Conglomerates
+KWEB,KWEB,KraneShares CSI China Internet ETF,Unknown,Unknown
+NASDAQ:PDD,PDD,PDD Holdings Inc.,Consumer Cyclical,Internet Retail
+SRE,SRE,Sempra,Utilities,Utilities - Diversified
+MCD,MCD,McDonald's Corporation,Consumer Cyclical,Restaurants
+IREN,IREN,IREN Limited,Financial Services,Capital Markets
+NASDAQ:MCHP,MCHP,Microchip Technology Incorporated,Technology,Semiconductors
+STZ,STZ,"Constellation Brands, Inc.",Consumer Defensive,Beverages - Brewers
+IONQ,IONQ,"IonQ, Inc.",Technology,Computer Hardware
+NYSE:LUV,LUV,Southwest Airlines Co.,Industrials,Airlines
+CCL,CCL,Carnival Corporation Ltd.,Consumer Cyclical,Travel Services
+ALB,ALB,Albemarle Corporation,Basic Materials,Specialty Chemicals
+AVGO,AVGO,Broadcom Inc.,Technology,Semiconductors
+SBAC,SBAC,SBA Communications Corporation,Real Estate,REIT - Specialty
+NASDAQ:ENPH,ENPH,"Enphase Energy, Inc.",Technology,Solar
+MLM,MLM,"Martin Marietta Materials, Inc.",Basic Materials,Building Materials
+PEG,PEG,Public Service Enterprise Group Incorporated,Utilities,Utilities - Regulated Electric
+NASDAQ:CEG,CEG,Constellation Energy Corporation,Utilities,Utilities - Independent Power Producers
+RKLB,RKLB,Rocket Lab Corporation,Industrials,Aerospace & Defense
+NASDAQ:TMUS,TMUS,"T-Mobile US, Inc.",Communication Services,Telecom Services
+APLD,APLD,Applied Digital Corporation,Technology,Information Technology Services
+COIN,COIN,"Coinbase Global, Inc.",Financial Services,Financial Data & Stock Exchanges
+LVS,LVS,Las Vegas Sands Corp.,Consumer Cyclical,Resorts & Casinos
+FISV,FISV,"Fiserv, Inc.",Unknown,Unknown
+NYSE:ORCL,ORCL,Oracle Corporation,Technology,Software - Infrastructure
+ISRG,ISRG,"Intuitive Surgical, Inc.",Healthcare,Medical Instruments & Supplies
+GLXY,GLXY,Galaxy Digital,Financial Services,Capital Markets
+MSTR,MSTR,Strategy Inc,Technology,Software - Application
+WMT,WMT,Walmart Inc.,Consumer Defensive,Discount Stores
+NYSE:TJX,TJX,"The TJX Companies, Inc.",Consumer Cyclical,Apparel Retail
+KR,KR,The Kroger Co.,Consumer Defensive,Grocery Stores
+CCI,CCI,Crown Castle Inc.,Real Estate,REIT - Specialty
+LULU,LULU,lululemon athletica inc.,Consumer Cyclical,Apparel Retail
+NYSE:GAP,GAP,"The Gap, Inc.",Consumer Cyclical,Apparel Retail
+NASDAQ:QCOM,QCOM,QUALCOMM Incorporated,Technology,Semiconductors
+ASTS,ASTS,"AST SpaceMobile, Inc.",Technology,Communication Equipment
+VST,VST,Vistra Corp.,Utilities,Utilities - Independent Power Producers
+NASDAQ:META,META,"Meta Platforms, Inc.",Communication Services,Internet Content & Information
+NKE,NKE,"NIKE, Inc.",Consumer Cyclical,Footwear & Accessories
+TLN,TLN,Talen Energy Corporation,Utilities,Utilities - Independent Power Producers
+DECK,DECK,Deckers Outdoor Corporation,Consumer Cyclical,Footwear & Accessories
+GME,GME,GameStop Corp.,Consumer Cyclical,Specialty Retail
+TSLA,TSLA,"Tesla, Inc.",Consumer Cyclical,Auto Manufacturers
+NRG,NRG,"NRG Energy, Inc.",Utilities,Utilities - Independent Power Producers
+NASDAQ:BIDU,BIDU,"Baidu, Inc.",Communication Services,Internet Content & Information
+OKLO,OKLO,Oklo Inc.,Utilities,Utilities - Independent Power Producers
+NASDAQ:APP,APP,AppLovin Corporation,Communication Services,Advertising Agencies
+LITE,LITE,Lumentum Holdings Inc.,Technology,Communication Equipment
