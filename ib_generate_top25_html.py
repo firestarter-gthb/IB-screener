@@ -1,3 +1,4 @@
+from ds_layout import apply_theme
 import pandas as pd
 from datetime import datetime
 import json
@@ -621,7 +622,7 @@ def generate_top25_report(csv_file, output_html):
 </html>
 """
     with open(output_html, 'w', encoding='utf-8') as f:
-        f.write(html)
+        f.write(apply_theme(html, 'ib25'))
     print(f"Top 25 HTML rapport gegenereerd: {output_html}")
 
 if __name__ == "__main__":
