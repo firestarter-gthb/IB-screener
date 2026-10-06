@@ -45,8 +45,9 @@ PAGES = {  # key: (nl, en)
 # Dashboards: key -> (bestand, titel NL, titel EN, sectie)
 DASHBOARDS = {
     'entry': ('entry_dashboard.html', 'S&P 500 Entry-dashboard', 'S&P 500 Entry Dashboard', 'spx'),
-    'ib': ('ib_screener_dashboard.html', 'IB Momentum-screener', 'IB Momentum Screener', 'ib'),
-    'ib25': ('ib_top25_portfolio.html', 'IB Top 25-portefeuille', 'IB Top 25 Portfolio', 'ib'),
+    'ib': ('ib_screener_dashboard.html', 'Stock Momentum-screener', 'Stock Momentum Screener', 'ib'),
+    'ib25': ('ib_top25_portfolio.html', 'Stock Top 25-portefeuille', 'Stock Top 25 Portfolio', 'ib'),
+    'momentum_seasonality': ('momentum_seasonality.html', 'Momentum Seasonality', 'Momentum Seasonality', 'degiro'),
     'momentum': ('momentum_screener_dashboard.html', 'ETF Momentum-screener', 'ETF Momentum Screener', 'degiro'),
     'momentum30': ('momentum_top30_portfolio.html', 'Momentum Top 30-portefeuille', 'Momentum Top 30 Portfolio', 'degiro'),
     'dividend': ('dividend_screener_dashboard.html', 'ETF Dividend-screener', 'ETF Dividend Screener', 'degiro'),
@@ -77,7 +78,7 @@ T = {
                gh='GitHub-portfolio', guides='Handleidingen & research', systematic='Systematische strategieën',
                all_strats='Alle strategieën', es='ES Short Put', pres='Presidentscyclus', annual='Jaarcyclus',
                cc='Covered Call', meic='MEIC-tranches', core='KERN', study='STUDIE',
-               spx='S&P 500', ibg='Interactive Brokers', degiro='DeGiro ETF',
+               spx='Dashboards', ibg='Stock screener', degiro='ETF screener',
                tagline='Data engineering en trading automation voor family offices en vermogensbeheerders. Behoud het initiatief — behoud Sente.',
                cta='Neem contact op', rights='Alle rechten voorbehouden.',
                disclaimer='Disclaimer: handelen in opties en futures brengt aanzienlijke risico’s met zich mee en is niet geschikt voor iedere belegger. De informatie op deze website is uitsluitend bedoeld voor educatieve doeleinden en vormt geen financieel advies of beleggingsadvies.',
@@ -89,7 +90,7 @@ T = {
                gh='GitHub portfolio', guides='Guides & research', systematic='Systematic strategies',
                all_strats='All strategies', es='ES Short Put', pres='Presidential Cycle', annual='Annual Cycle',
                cc='Covered Call', meic='MEIC tranches', core='CORE', study='STUDY',
-               spx='S&P 500', ibg='Interactive Brokers', degiro='DeGiro ETF',
+               spx='Dashboards', ibg='Stock screener', degiro='ETF screener',
                tagline='Data engineering and trading automation for family offices and wealth managers. Keep the initiative — keep Sente.',
                cta='Get in touch', rights='All rights reserved.',
                disclaimer='Disclaimer: trading options and futures involves substantial risk and is not suitable for every investor. The information on this website is for educational purposes only and does not constitute financial or investment advice.',
@@ -132,7 +133,7 @@ def nav_model(lang):
                  links=[(nl if lang == 'nl' else en, f'{strat}#{sid}') for sid, nl, en in STRATS]),
         ]),
         dict(key='dash', label=t['dashboards'], cols=3, groups=[
-            dict(title=t['spx'], links=[d('entry')]),
+            dict(title=t['spx'], links=[d('entry'), d('momentum_seasonality')]),
             dict(title=t['ibg'], links=[d('ib'), d('ib25')]),
             dict(title=t['degiro'], two=True, links=[d('momentum'), d('momentum30'), d('dividend'), d('dividend30'),
                                                      d('fundamentals'), d('fundamentals30')]),
@@ -222,6 +223,7 @@ def render_footer(lang, tag='footer'):
         (t['strategies'], [(t['all_strats'], p('strategies')), (t['es'], p('es')), (t['meic'], p('meic')),
                            (t['pres'], p('pres')), (t['annual'], p('annual')), (t['cc'], p('cc'))]),
         (t['dashboards'], [(nm('entry'), dash('entry', lang)), (nm('ib'), dash('ib', lang)),
+                           (nm('momentum_seasonality'), dash('momentum_seasonality', lang)),
                            (nm('momentum'), dash('momentum', lang)), (nm('dividend'), dash('dividend', lang)),
                            (nm('fundamentals'), dash('fundamentals', lang))]),
     ]
@@ -622,7 +624,7 @@ def transform_html_styles(html):
 DASH_CSS = r"""
 html{-webkit-text-size-adjust:100%}
 body{font-family:var(--font-body)!important;background:var(--bg)!important;color:var(--ink)!important;margin:0!important;padding:0!important;max-width:none!important;min-height:100vh;display:flex!important;flex-direction:column!important;line-height:1.5}
-.ds-content{flex:1 0 auto;width:100%;max-width:1680px;margin:0 auto;padding:clamp(1rem,3vw,2rem) clamp(.75rem,3vw,2rem) 3rem;display:flex;flex-direction:column;min-width:0}
+.ds-content{box-sizing:border-box;flex:1 0 auto;width:100%;max-width:1680px;margin:0 auto;padding:clamp(1rem,3vw,2rem) clamp(.75rem,3vw,2rem) 3rem;display:flex;flex-direction:column;min-width:0}
 .ds-intro{margin:0 0 1rem;color:var(--muted);max-width:900px}
 .ds-kicker{align-self:flex-start;display:inline-block;font:700 .72rem/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;background:var(--violet);color:var(--ink);padding:.3rem .55rem;margin-bottom:.6rem}
 .ds-content h1{font-family:var(--font-head)!important;font-weight:700!important;text-transform:uppercase;letter-spacing:-.04em!important;line-height:1!important;font-size:clamp(1.6rem,4vw,2.6rem)!important;color:var(--ink)!important;-webkit-text-fill-color:currentColor!important;background:none!important;margin:0 0 .4rem!important;padding:0!important}
@@ -709,18 +711,19 @@ DS_I18N = {
 }
 
 DS_INTRO = {  # korte uitleg per dashboard (NL, EN)
+    'momentum_seasonality': ("Historische prestaties van Momentum ETF's (Vanaf 2007)", "Historical performance of Momentum ETFs (Since 2007)"),
     'entry': ('Seizoensregime (60% jaarcyclus + 40% presidentscyclus) voor de komende OpEx-perioden, gecorrigeerd voor VIX, 200-daags gemiddelde en waardering.',
               'Seasonal regime (60% annual cycle + 40% presidential cycle) for the upcoming OpEx periods, adjusted for VIX, the 200-day average and valuation.'),
-    'ib': ('Momentum-ranking van Amerikaanse aandelen via Interactive Brokers. Filter en sorteer per kolom.',
-           'Momentum ranking of US stocks via Interactive Brokers. Filter and sort per column.'),
+    'ib': ('Momentum-ranking van Amerikaanse aandelen. Filter en sorteer per kolom.',
+           'Momentum ranking of US stocks. Filter and sort per column.'),
     'ib25': ('De 25 hoogst gerangschikte momentumaandelen, gespreid over sectoren.',
              'The 25 highest-ranked momentum stocks, diversified across sectors.'),
-    'momentum': ('Momentum-ranking van het volledige DeGiro ETF-universum. Filter en sorteer per kolom.',
-                 'Momentum ranking of the full DeGiro ETF universe. Filter and sort per column.'),
+    'momentum': ('Momentum-ranking van het volledige ETF-universum. Filter en sorteer per kolom.',
+                 'Momentum ranking of the full ETF universe. Filter and sort per column.'),
     'momentum30': ('Top 30 momentum-ETF’s met spreiding over landen en sectoren.',
                    'Top 30 momentum ETFs with diversification across countries and sectors.'),
-    'dividend': ('Dividend-ranking van DeGiro ETF’s op rendement, groei en kwaliteit.',
-                 'Dividend ranking of DeGiro ETFs by yield, growth and quality.'),
+    'dividend': ('Dividend-ranking van ETF’s op rendement, groei en kwaliteit.',
+                 'Dividend ranking of ETFs by yield, growth and quality.'),
     'dividend30': ('Top 30 dividend-ETF’s, gefilterd op kwaliteit en sectorspreiding.',
                    'Top 30 dividend ETFs, filtered for quality and sector diversification.'),
     'fundamentals': ('ETF’s gerangschikt op fundamentele waarde en risico (volatiliteit, drawdown, Sharpe).',
@@ -744,10 +747,213 @@ def _legend(lang):
             f'<span><i style="background:#c6f432"></i>{c}</span></div>')
 
 
+# ---------------------------------------------------------------------------
+# S&P 500 Entry-dashboard (Plotly): layout-fix, mobiel en Engelse vertaling
+#   - Titel + 5 indicatoren gaan uit het Plotly-canvas naar responsieve HTML
+#     (in de generator overlapten ze met de eerste grafiek).
+#   - Herstelt yaxis2: de generator maakte van de as van rij 2 een overlay op
+#     rij 1, waardoor de SPY/QQQ/SMH-staven bovenin terechtkwamen.
+#   - Mobiel (<=700px): compacte assen, korte labels, geen scroll-zoom.
+#   - ?lang=en (of opgeslagen taalkeuze): alle grafiekteksten in het Engels.
+# ---------------------------------------------------------------------------
+ENTRY_CSS = r"""
+.ds-entry-head{margin:0 0 1.25rem}
+.ds-entry-head h1 .em{font-style:normal}
+.ds-entry-meta{margin:0 0 .2rem!important;font:400 .8rem/1.5 var(--font-mono);color:var(--muted)}
+.ds-entry-meta span{color:inherit!important;font-size:inherit!important}
+.ds-entry-advice{margin:.9rem 0 1rem;padding:.8rem 1rem;background:var(--surface);border:3px solid var(--ink);box-shadow:var(--shadow-sm);font-size:.95rem;line-height:1.5;max-width:none!important}
+.ds-entry-advice span{color:var(--ink)!important;font-size:inherit!important}
+.ds-kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.75rem}
+.ds-kpi{min-width:0;padding:.75rem .9rem;background:var(--surface);border:3px solid var(--ink);box-shadow:var(--shadow-sm)}
+.ds-kpi .k{font:700 .74rem/1.3 var(--font-mono);text-transform:uppercase;letter-spacing:.03em}
+.ds-kpi .k span{display:block;margin-top:.15rem;font-size:.8rem!important;text-transform:none;letter-spacing:0}
+.ds-kpi .v{margin-top:.35rem;font:700 clamp(1.5rem,3vw,2rem)/1.05 var(--font-head);font-variant-numeric:tabular-nums}
+.ds-entry-plot{width:100%;min-width:0}
+.ds-entry-plot .plotly-graph-div{width:auto!important;background:#0d1117!important}
+@media (max-width:900px){.ds-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.ds-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}.ds-kpi{padding:.6rem .7rem}.ds-kpi:last-child:nth-child(odd){grid-column:1/-1}.ds-entry-advice{font-size:.88rem}}
+"""
+
+ENTRY_JS = r"""
+(function(){
+  var NL2EN=[
+    [/SEIZOENSREGIME — Komende 10 Perioden/g,'SEASONAL REGIME — Next 10 Periods'],
+    [/HISTORISCHE GEMIDDELDE RETURNS/g,'HISTORICAL AVERAGE RETURNS'],
+    [/CUMULATIEVE VERWACHTING/g,'CUMULATIVE EXPECTATION'],
+    [/HISTORISCHE VERDELING — Huidige & Volgende Periode/g,'HISTORICAL DISTRIBUTION — Current & Next Period'],
+    [/Seizoens Entry Dashboard/g,'Seasonal Entry Dashboard'],
+    [/Gegenereerd op/g,'Generated on'],
+    [/Kortetermijn Actie/g,'Short-Term Action'],
+    [/Zwakte verwacht\. Wacht op een dip\./g,'Weakness expected. Wait for a dip.'],
+    [/Neutraal regime, maar betere tijden in aantocht\. Accumuleren\./g,'Neutral regime, but better times ahead. Accumulate.'],
+    [/Neutraal regime\. Geen haast\./g,'Neutral regime. No rush.'],
+    [/Seizoen in de rug\. Kopen bij kleine dips\./g,'Seasonal tailwind. Buy small dips.'],
+    [/Markt is duur en HYG toont risk-off\. Wees conservatief met instappen\./g,'Market is expensive and HYG shows risk-off. Be conservative with entries.'],
+    [/Markt is fundamenteel duur, agressief kopen is riskant\./g,'Market is fundamentally expensive; aggressive buying is risky.'],
+    [/Let op: Credit markten \(HYG\) tonen lichte zwakte\./g,'Note: credit markets (HYG) show slight weakness.'],
+    [/Marktomstandigheden en risico-indicatoren lijken gezond\./g,'Market conditions and risk indicators look healthy.'],
+    [/HUIDIGE PERIODE/g,'CURRENT PERIOD'],
+    [/Gecorrigeerde verwachting/g,'Adjusted expectation'],
+    [/Cumulatief macro-gecorrigeerd/g,'Cumulative macro-adjusted'],
+    [/Cumulatief gecorrigeerd/g,'Cumulative adjusted'],
+    [/Cumulatief basis/g,'Cumulative base'],
+    [/Basis avg per periode/g,'Base avg per period'],
+    [/Basis verwachting/g,'Base expectation'],
+    [/\bBasis\b/g,'Base'],
+    [/Gecombineerd Regime/g,'Combined Regime'],
+    [/\bGecombineerd\b/g,'Combined'],
+    [/\bGecorrigeerd\b/g,'Adjusted'],
+    [/Sterk Groen/g,'Strong Green'],[/Sterk Rood/g,'Strong Red'],
+    [/\bGroen\b/g,'Green'],[/\bRood\b/g,'Red'],
+    [/seizoensrendement verminderd/g,'seasonal return reduced'],
+    [/licht versterkt/g,'slightly amplified'],[/sterk versterkt/g,'strongly amplified'],[/max versterkt/g,'max amplified'],
+    [/drawdown minder ernstig/g,'drawdown less severe'],[/drawdown versterkt/g,'drawdown amplified'],
+    [/gevaarzone actief/g,'danger zone active'],[/zware drawdown verwacht/g,'heavy drawdown expected'],
+    [/bear versterkt/g,'bear amplified'],[/bear verzwakt/g,'bear weakened'],[/extra bounce kans/g,'extra bounce chance'],
+    [/Erg Goedkoop/g,'Very Cheap'],[/Erg Duur/g,'Very Expensive'],[/\bGoedkoop\b/g,'Cheap'],
+    [/\bGemiddeld\b/g,'Average'],[/\bPrijzig\b/g,'Pricey'],
+    [/200d gem\b/g,'200d avg'],[/\bBoven\b/g,'Above'],[/\bOnder\b/g,'Below'],[/\bNabij\b/g,'Near'],
+    [/Presidential Cyclus/g,'Presidential Cycle'],[/\bCyclus:/g,'Cycle:'],[/\bPeriode:/g,'Period:'],
+    [/Verkiezingsjaar/g,'Election Year'],[/Post-Verkiezing/g,'Post-Election'],[/Pre-Verkiezing/g,'Pre-Election'],
+    [/\bGem:/g,'Avg:'],[/\bBeste:/g,'Best:'],[/\bSlechtste:/g,'Worst:'],
+    [/\bNeutraal\b/g,'Neutral'],[/\bneutraal\b/g,'neutral'],
+    [/\bNormaal\b/g,'Normal'],[/\bnormaal\b/g,'normal'],
+    [/\bVerhoogd\b/g,'Elevated'],[/\bverhoogd\b/g,'elevated'],
+    [/\bLaag\b/g,'Low'],[/\bLAAG\b/g,'LOW'],[/\bHoog\b/g,'High'],[/\bHOOG\b/g,'HIGH'],
+    [/\bExtreem\b/g,'Extreme'],[/\bEXTREEM\b/g,'EXTREME'],
+    [/\bonbekend\b/g,'unknown'],[/geen data/g,'no data'],
+    [/\(Huidig\)/g,'(Current)'],[/\(Volgend\)/g,'(Next)'],
+    [/\bMrt\b/g,'Mar'],[/\bMei\b/g,'May'],[/\bOkt\b/g,'Oct'],
+    [/\bNU\b/g,'NOW']
+  ];
+  var SKIP={bdata:1,dtype:1,shape:1,customdata:1};
+  function pickLang(){var q=null,l='nl';try{q=new URLSearchParams(location.search).get('lang');l=(q||localStorage.getItem('ds-lang')||'nl').toLowerCase();}catch(e){l=(q||'nl').toLowerCase();}return l==='en'?'en':'nl';}
+  function tr(s){for(var i=0;i<NL2EN.length;i++)s=s.replace(NL2EN[i][0],NL2EN[i][1]);return s;}
+  function walk(o,key){
+    if(typeof o==='string')return SKIP[key]?o:tr(o);
+    if(Array.isArray(o))return o.map(function(v){return walk(v,key);});
+    if(o&&typeof o==='object'){var r={};for(var k in o)r[k]=SKIP[k]?o[k]:walk(o[k],k);return r;}
+    return o;
+  }
+  function clone(o){return JSON.parse(JSON.stringify(o));}
+  function strip(s){return String(s).replace(/<[^>]*>/g,'').trim();}
+
+  /* Structurele reparatie (los van schermbreedte) */
+  function prepare(data,layout){
+    var kpis=[],keep=[];
+    data.forEach(function(t){(t.type==='indicator'?kpis:keep).push(t);});
+    var title=(layout.title&&layout.title.text)||'';
+    delete layout.title;
+    var y2=layout.yaxis2||{},adjTitle=(y2.title&&y2.title.text)||'';
+    if(y2.overlaying){delete y2.overlaying;delete y2.side;delete y2.title;y2.showgrid=true;y2.tickfont={size:9,color:'#8b949e'};}
+    var hasOverlay=false;
+    keep.forEach(function(t){if(t.type==='scatter'&&(t.xaxis||'x')==='x'&&(t.yaxis||'y')==='y'){t.yaxis='y5';hasOverlay=true;}});
+    if(hasOverlay)layout.yaxis5={overlaying:'y',side:'right',anchor:'x',showgrid:false,zeroline:false,tickformat:'+.1f',ticksuffix:'%',
+      tickfont:{color:'#ffd700',size:9},title:{text:adjTitle,font:{color:'#ffd700',size:9}}};
+    layout.margin=Object.assign({},layout.margin||{},{t:48});
+    return {data:keep,layout:layout,kpis:kpis,title:title};
+  }
+
+  function shortTick(s){var first=String(s).split(/<br\s*\/?>/i)[0];var cur=/&gt;&gt;&gt;|>>>/.test(first);return (cur?'\u25B6 ':'')+strip(first).replace(/^(&gt;|>)+\s*/,'');}
+
+  /* Schermafhankelijke variant */
+  function variant(base,mobile){
+    var d=clone(base.data),l=clone(base.layout);
+    l.hoverlabel={font:{size:mobile?10:11}};
+    if(!mobile)return {d:d,l:l};
+    l.margin={l:40,r:40,t:42,b:30};
+    l.hovermode='closest';
+    l.dragmode=false;
+    l.legend=Object.assign({},l.legend||{},{font:{size:9},y:-0.025});
+    ['x','x2','x3'].forEach(function(ax){
+      var key=ax==='x'?'xaxis':'xaxis'+ax.slice(1),src=null;
+      d.forEach(function(t){if(!src&&(t.xaxis||'x')===ax&&Array.isArray(t.x))src=t.x;});
+      if(!src||!l[key])return;
+      l[key].tickmode='array';l[key].tickvals=src;l[key].ticktext=src.map(shortTick);
+      l[key].tickangle=-60;l[key].tickfont=Object.assign({},l[key].tickfont||{},{size:8});
+    });
+    if(l.xaxis4)l.xaxis4.showticklabels=false;
+    ['yaxis','yaxis2','yaxis3','yaxis4','yaxis5'].forEach(function(k){if(l[k]){l[k].tickfont=Object.assign({},l[k].tickfont||{},{size:8});if(l[k].title)l[k].title.text='';}});
+    (l.annotations||[]).forEach(function(a){
+      if(a.xref==='paper'){a.font=Object.assign({},a.font||{},{size:10});return;}
+      var m=/\(([+-]?\d)\)/.exec(strip(a.text||''));
+      if(m&&!a.showarrow){a.text='<b>'+m[1]+'</b>';a.font=Object.assign({},a.font||{},{size:9});}
+      else if(a.showarrow){a.font=Object.assign({},a.font||{},{size:11});}
+    });
+    d.forEach(function(t){
+      if(t.type!=='bar')return;
+      if((t.xaxis||'x')==='x'&&Array.isArray(t.text)){t.text=t.text.map(function(s){var p=String(s).split(/<br\s*\/?>/i);return p.length>1?p[1]:s;});t.textfont=Object.assign({},t.textfont||{},{size:8});}
+      if(t.xaxis==='x2')t.textposition='none';
+    });
+    return {d:d,l:l};
+  }
+
+  function fmt(t){var v=Number(t.value),s=(t.number&&t.number.suffix)||'';if(!isFinite(v))return 'N/A';return (Number.isInteger(v)||Math.abs(v)>=1000?String(Math.round(v)):v.toFixed(1))+s;}
+
+  function renderHead(gd,base){
+    var wrap=gd.parentElement&&gd.parentElement.style.height?gd.parentElement:gd;
+    var host=document.getElementById('ds-entry-head');
+    if(!host){host=document.createElement('section');host.id='ds-entry-head';host.className='ds-entry-head';wrap.parentNode.insertBefore(host,wrap);}
+    var lines=String(base.title).split(/<br\s*\/?>/i).filter(function(x){return strip(x);});
+    var h='';
+    if(lines.length){h+='<h1>'+strip(lines[0])+'</h1>';}
+    lines.slice(1).forEach(function(x){
+      if(/\uD83D\uDCA1|<b>/.test(x))h+='<div class="ds-entry-advice">'+x+'</div>';
+      else h+='<p class="ds-entry-meta">'+x+'</p>';
+    });
+    if(base.kpis.length){
+      h+='<div class="ds-kpis">'+base.kpis.map(function(t){
+        var c=(t.number&&t.number.font&&t.number.font.color)||'inherit';
+        var k=String((t.title&&t.title.text)||'').replace(/<br\s*\/?>/gi,'');
+        return '<div class="ds-kpi"><div class="k">'+k+'</div><div class="v" style="color:'+c+'">'+fmt(t)+'</div></div>';
+      }).join('')+'</div>';
+    }
+    host.innerHTML=h;
+  }
+
+  window.dsPlot=function(id,data,layout,config){
+    var gd=typeof id==='string'?document.getElementById(id):id;
+    if(!gd)return;
+    if(pickLang()==='en'){data=walk(data,'');layout=walk(layout,'');}
+    var base=prepare(data,layout);
+    renderHead(gd,base);
+    var wrap=gd.parentElement;
+    if(wrap&&wrap.style.height){wrap.style.height='auto';wrap.classList.add('ds-entry-plot');}
+    var cfg=Object.assign({},config||{},{scrollZoom:false,responsive:true});
+    var mq=window.matchMedia('(max-width: 700px)');
+    function draw(first){
+      var m=mq.matches,v=variant(base,m),c=Object.assign({},cfg,{displayModeBar:!m});
+      gd.style.height=(v.l.height||1380)+'px';
+      return first?Plotly.newPlot(gd,v.d,v.l,c):Plotly.react(gd,v.d,v.l,c);
+    }
+    if(mq.addEventListener)mq.addEventListener('change',function(){draw(false);});
+    else if(mq.addListener)mq.addListener(function(){draw(false);});
+    /* Breedte volgen als de container verandert zonder window-resize (bv. scrollbalk na laden) */
+    if(window.ResizeObserver){var lastW=0,raf=0;new ResizeObserver(function(){var w=gd.clientWidth;if(Math.abs(w-lastW)<2)return;lastW=w;cancelAnimationFrame(raf);
+      raf=requestAnimationFrame(function(){if(gd._fullLayout)Plotly.Plots.resize(gd);});}).observe(gd);}
+    return draw(true);
+  };
+})();
+"""
+
+
+def patch_entry(html):
+    """Koppelt de Entry-dashboard-fix aan een (al dan niet al gethemede) Plotly-pagina.
+    Idempotent; een eerder ingevoegde versie wordt vervangen door de actuele."""
+    html = re.sub(r'<style data-ds-theme="entry">.*?</style><script data-ds-theme="entry">.*?</script>', '', html, flags=re.S)
+    html = html.replace('.ds-content{flex:1 0 auto;width:100%;', '.ds-content{box-sizing:border-box;flex:1 0 auto;width:100%;')
+    if 'Plotly.newPlot(' in html:
+        html = html.replace('Plotly.newPlot(', 'window.dsPlot(', 1)
+    if 'window.dsPlot(' not in html:
+        return html
+    inject = f'<style data-ds-theme="entry">{ENTRY_CSS}</style><script data-ds-theme="entry">{ENTRY_JS}</script>'
+    return html.replace('</head>', inject + '</head>', 1)
+
+
 def apply_theme(html, key):
     """Zet een gegenereerde dashboard-HTML om naar de DataSente-huisstijl (idempotent)."""
     if 'data-ds-theme' in html:
-        return html
+        return patch_entry(html) if key == 'entry' else html
     file_, t_nl, t_en, _ = DASHBOARDS[key]
     html = transform_html_styles(html)
     lang_hrefs = {'nl': f'{file_}?lang=nl', 'en': f'{file_}?lang=en'}
@@ -793,4 +999,6 @@ def apply_theme(html, key):
     i18n = f'<script>window.DS_I18N={json.dumps(DS_I18N, ensure_ascii=False)};</script>'
     idx = html.rfind('</body>')
     html = html[:idx] + '</div>' + footers + i18n + f'<script data-ds-theme="layout">{LAYOUT_JS}</script>' + html[idx:]
+    if key == 'entry':
+        html = patch_entry(html)
     return html
