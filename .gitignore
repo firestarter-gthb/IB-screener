@@ -33,6 +33,16 @@ coverage.xml
 .idea/
 *.log
 
+# Virtuele omgeving
+.venv/
+venv/
+
+# Backtest-datasets (groot, opnieuw te genereren met backtester_data_gen.py)
+backtest_dataset*.csv
+
+# Lokale backups
+*_backup.csv
+
 # Je kunt er optioneel voor kiezen om de gedownloade en gegenereerde CSV/HTML bestanden lokaal te houden 
 # en niet te pushen naar github, zodat je repo puur code blijft.
 # ib_tickers.csv

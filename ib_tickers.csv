@@ -185,13 +185,13 @@ GS,GS,"The Goldman Sachs Group, Inc.",Financial Services,Capital Markets
 PAAS,PAAS,Pan American Silver Corp.,Basic Materials,Gold
 HUT,HUT,Hut 8 Corp.,Financial Services,Capital Markets
 D,D,"Dominion Energy, Inc.",Utilities,Utilities - Regulated Electric
-BRK.B,BRK.B,Unknown,Unknown,Unknown
+BRK.B,BRK-B,Berkshire Hathaway Inc.,Financial Services,Insurance - Diversified
 NOC,NOC,Northrop Grumman Corporation,Industrials,Aerospace & Defense
 SYK,SYK,Stryker Corporation,Healthcare,Medical Devices
 CL,CL,Colgate-Palmolive Company,Consumer Defensive,Household & Personal Products
 HAL,HAL,Halliburton Company,Energy,Oil & Gas Equipment & Services
 TXN,TXN,Texas Instruments Incorporated,Technology,Semiconductors
-CTVA,CTVA,"Vylor, Inc.",Basic Materials,Agricultural Inputs
+CTVA,CTVA,"Corteva, Inc.",Basic Materials,Agricultural Inputs
 TT,TT,Trane Technologies plc,Industrials,Building Products & Equipment
 FE,FE,FirstEnergy Corp.,Utilities,Utilities - Regulated Electric
 CAT,CAT,Caterpillar Inc.,Industrials,Farm & Heavy Construction Machinery
@@ -243,7 +243,7 @@ IBM,IBM,International Business Machines Corporation,Technology,Information Techn
 VICI,VICI,VICI Properties Inc.,Real Estate,REIT - Diversified
 UPST,UPST,"Upstart Holdings, Inc.",Financial Services,Credit Services
 HON,HON,Honeywell International Inc.,Industrials,Conglomerates
-KWEB,KWEB,KraneShares CSI China Internet ETF,Unknown,Unknown
+KWEB,KWEB,KraneShares CSI China Internet ETF,ETF,ETF
 PDD,PDD,PDD Holdings Inc.,Consumer Cyclical,Internet Retail
 SRE,SRE,Sempra,Utilities,Utilities - Diversified
 MCD,MCD,McDonald's Corporation,Consumer Cyclical,Restaurants
@@ -265,7 +265,7 @@ TMUS,TMUS,"T-Mobile US, Inc.",Communication Services,Telecom Services
 APLD,APLD,Applied Digital Corporation,Technology,Information Technology Services
 COIN,COIN,"Coinbase Global, Inc.",Financial Services,Financial Data & Stock Exchanges
 LVS,LVS,Las Vegas Sands Corp.,Consumer Cyclical,Resorts & Casinos
-FISV,FISV,"Fiserv, Inc.",Unknown,Unknown
+FISV,FISV,"Fiserv, Inc.",Technology,Information Technology Services
 ORCL,ORCL,Oracle Corporation,Technology,Software - Infrastructure
 ISRG,ISRG,"Intuitive Surgical, Inc.",Healthcare,Medical Instruments & Supplies
 GLXY,GLXY,Galaxy Digital,Financial Services,Capital Markets

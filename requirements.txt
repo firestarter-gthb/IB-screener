@@ -2,3 +2,7 @@ pandas
 yfinance
 numpy
 requests
+tqdm
+scipy
+scikit-learn
+matplotlib
