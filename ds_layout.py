@@ -45,6 +45,7 @@ PAGES = {  # key: (nl, en)
 # Dashboards: key -> (bestand, titel NL, titel EN, sectie)
 DASHBOARDS = {
     'entry': ('entry_dashboard.html', 'S&P 500 Entry-dashboard', 'S&P 500 Entry Dashboard', 'spx'),
+    'breadth': ('market_breadth_dashboard.html', 'S&P 500 Market Breadth', 'S&P 500 Market Breadth', 'spx'),
     'ib': ('ib_screener_dashboard.html', 'Stock Momentum-screener', 'Stock Momentum Screener', 'ib'),
     'ib25': ('ib_top25_portfolio.html', 'Stock Top 25-portefeuille', 'Stock Top 25 Portfolio', 'ib'),
     'momentum_seasonality': ('momentum_seasonality.html', 'Momentum Seasonality', 'Momentum Seasonality', 'degiro'),
@@ -133,7 +134,7 @@ def nav_model(lang):
                  links=[(nl if lang == 'nl' else en, f'{strat}#{sid}') for sid, nl, en in STRATS]),
         ]),
         dict(key='dash', label=t['dashboards'], cols=3, groups=[
-            dict(title=t['spx'], links=[d('entry'), d('momentum_seasonality')]),
+            dict(title=t['spx'], links=[d('entry'), d('breadth'), d('momentum_seasonality')]),
             dict(title=t['ibg'], links=[d('ib'), d('ib25')]),
             dict(title=t['degiro'], two=True, links=[d('momentum'), d('momentum30'), d('dividend'), d('dividend30'),
                                                      d('fundamentals'), d('fundamentals30')]),
@@ -222,7 +223,8 @@ def render_footer(lang, tag='footer'):
                           (t['blog'], p('insights')), (t['gh'], p('github')), (t['about'], p('about'))]),
         (t['strategies'], [(t['all_strats'], p('strategies')), (t['es'], p('es')), (t['meic'], p('meic')),
                            (t['pres'], p('pres')), (t['annual'], p('annual')), (t['cc'], p('cc'))]),
-        (t['dashboards'], [(nm('entry'), dash('entry', lang)), (nm('ib'), dash('ib', lang)),
+        (t['dashboards'], [(nm('entry'), dash('entry', lang)), (nm('breadth'), dash('breadth', lang)),
+                           (nm('ib'), dash('ib', lang)),
                            (nm('momentum_seasonality'), dash('momentum_seasonality', lang)),
                            (nm('momentum'), dash('momentum', lang)), (nm('dividend'), dash('dividend', lang)),
                            (nm('fundamentals'), dash('fundamentals', lang))]),
@@ -714,6 +716,8 @@ DS_INTRO = {  # korte uitleg per dashboard (NL, EN)
     'momentum_seasonality': ("Historische prestaties van Momentum ETF's (Vanaf 2007)", "Historical performance of Momentum ETFs (Since 2007)"),
     'entry': ('Seizoensregime (60% jaarcyclus + 40% presidentscyclus) voor de komende OpEx-perioden, gecorrigeerd voor VIX, 200-daags gemiddelde en waardering.',
               'Seasonal regime (60% annual cycle + 40% presidential cycle) for the upcoming OpEx periods, adjusted for VIX, the 200-day average and valuation.'),
+    'breadth': ('Hoe breed wordt de markt gedragen? Percentage S&P 500-aandelen boven hun 20-, 50-, 100- en 200-daags gemiddelde, samengevat in een composite score en regime, met een backtest per regime.',
+                "How broad is the market's participation? Share of S&P 500 stocks above their 20, 50, 100 and 200-day averages, summarised in a composite score and regime, with a backtest per regime."),
     'ib': ('Momentum-ranking van Amerikaanse aandelen. Filter en sorteer per kolom.',
            'Momentum ranking of US stocks. Filter and sort per column.'),
     'ib25': ('De 25 hoogst gerangschikte momentumaandelen, gespreid over sectoren.',
@@ -940,6 +944,18 @@ ENTRY_JS = r"""
 def patch_entry(html):
     """Koppelt de Entry-dashboard-fix aan een (al dan niet al gethemede) Plotly-pagina.
     Idempotent; een eerder ingevoegde versie wordt vervangen door de actuele."""
+    if '<title>' not in html:
+        html = html.replace('<head>', '<head><title>S&P 500 Entry-dashboard · DataSente</title>', 1)
+    if 'favicon.ico' not in html:
+        favicon_tags = (
+            '<link rel="icon" type="image/svg+xml" href="favicon.svg">'
+            '<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">'
+            '<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">'
+            '<link rel="shortcut icon" href="favicon.ico">'
+            '<link rel="apple-touch-icon" href="apple-touch-icon.png">'
+        )
+        html = re.sub(r'<link rel="[^"]*icon"[^>]*>', '', html)
+        html = html.replace('</head>', favicon_tags + '</head>', 1)
     html = re.sub(r'<style data-ds-theme="entry">.*?</style><script data-ds-theme="entry">.*?</script>', '', html, flags=re.S)
     html = html.replace('.ds-content{flex:1 0 auto;width:100%;', '.ds-content{box-sizing:border-box;flex:1 0 auto;width:100%;')
     if 'Plotly.newPlot(' in html:
@@ -957,17 +973,25 @@ def apply_theme(html, key):
     file_, t_nl, t_en, _ = DASHBOARDS[key]
     html = transform_html_styles(html)
     lang_hrefs = {'nl': f'{file_}?lang=nl', 'en': f'{file_}?lang=en'}
+    title_tag = f'<title>{_esc(t_nl)} · DataSente</title>'
     head_add = (
         ('<meta name="viewport" content="width=device-width, initial-scale=1.0">' if 'name="viewport"' not in html else '')
         + f'<meta name="ds-title-nl" content="{_esc(t_nl)} · DataSente">'
         + f'<meta name="ds-title-en" content="{_esc(t_en)} · DataSente">'
         + '<meta name="theme-color" content="#f3f0e8">'
-        + '<link rel="icon" href="favicon.svg" type="image/svg+xml">'
+        + '<link rel="icon" type="image/svg+xml" href="favicon.svg">'
+        + '<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">'
+        + '<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">'
+        + '<link rel="shortcut icon" href="favicon.ico">'
+        + '<link rel="apple-touch-icon" href="apple-touch-icon.png">'
         + FONT_LINKS
         + f'<style data-ds-theme="layout">{LAYOUT_CSS}{DASH_CSS}</style>'
     )
-    html = re.sub(r'<title>.*?</title>', f'<title>{_esc(t_nl)} · DataSente</title>', html, count=1, flags=re.S)
-    html = re.sub(r'<link rel="icon"[^>]*>', '', html)
+    if '<title>' in html:
+        html = re.sub(r'<title>.*?</title>', title_tag, html, count=1, flags=re.S)
+    else:
+        head_add = title_tag + head_add
+    html = re.sub(r'<link rel="[^"]*icon"[^>]*>', '', html)
     html = html.replace('</head>', head_add + '</head>', 1)
     intro = ''.join(
         f'<p class="ds-intro" data-lang-block="{lg}"{" hidden" if lg == "en" else ""}>'
