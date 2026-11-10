@@ -1,12 +1,12 @@
 GICS sector|Aantal|Sector_Rank|Sector_Rank_past|Delta
-Consumer Defensive|20|1|6|5
-Healthcare|25|2|3|1
+Healthcare|25|1|3|2
+Consumer Defensive|20|2|4|2
 Energy|20|3|1|-2
-Real Estate|17|4|9|5
-Basic Materials|21|5|4|-1
-Consumer Cyclical|34|6|10|4
-Industrials|23|7|5|-2
+Real Estate|17|4|10|6
+Basic Materials|21|5|5|0
+Consumer Cyclical|34|6|9|3
+Industrials|23|7|6|-1
 Utilities|19|8|11|3
 Technology|65|9|2|-7
 Financial Services|25|10|8|-2
-Communication Services|20|11|7|-4
+Communication Services|19|11|7|-4
